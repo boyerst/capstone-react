@@ -8,10 +8,12 @@ import RouteContainer from './RouteContainer'
 export default class App extends Component {
   constructor() {
     super()
-  
+    this.state = {
+      routes: []
     }
 
-    
+  }
+  
 
 
 
@@ -24,6 +26,6 @@ export default class App extends Component {
       </React.Fragment>
     )
   }
-}
 
+}
 
