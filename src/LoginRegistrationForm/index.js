@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Grid, Label, Segment, Message } from 'semantic-ui-react'
+import { Form, Button, Grid, Segment, Message } from 'semantic-ui-react'
 
 export default class LoginRegisterForm extends Component {
 

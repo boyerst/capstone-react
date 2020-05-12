@@ -14,21 +14,36 @@ export default class NewRouteForm extends Component {
     }
   }
 
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.createRoute(this.state) 
+    this.setState({
+      location: '',
+      length: '',
+      skill_level: '',
+      comments: '',
+      modalOpen: false
+    })
+  }
+
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
+  handleRate = (event, { rating, maxRating }) =>
+    this.setState({ rating, maxRating })
 
-   
   handleOpen = () => this.setState({ modalOpen: true })
 
 
   render() {
   return(
     <Modal 
-    primary
+    primary="true"
     className="createRoute"
     basic size= "large" 
     trigger={<Button onClick={this.handleOpen}>Add New Route</Button>}
@@ -56,7 +71,7 @@ export default class NewRouteForm extends Component {
                 fluid icon="exchange"
                 iconPosition="left"
                 placeholder="Length"
-                value={this.state.address}
+                value={this.state.length}
                 onChange={this.handleChange}
               />
               <Form.Input
@@ -65,7 +80,7 @@ export default class NewRouteForm extends Component {
                 fluid icon="comment alternate outline"
                 iconPosition="left"
                 placeholder="Comments"
-                value={this.state.zip_code}
+                value={this.state.comments}
                 onChange={this.handleChange}
               />
               <Form.Input>
@@ -77,8 +92,23 @@ export default class NewRouteForm extends Component {
                   defaultRating={0} 
                 />
               </Form.Input>
-              
-             
+              <br/>
+                <Modal.Actions>
+                <Button 
+                  type= "Submit" 
+                  color="green" 
+                  onClick={this.handleClose}>
+                    <Icon name='plus' />
+                  Add Route
+                </Button>
+                &nbsp;
+                <Button 
+                  color='grey' 
+                  onClick={this.handleClose}>
+                    <Icon name='undo' /> 
+                  Go Back
+                </Button>
+                </Modal.Actions>
             </Form>
           </Segment>
         </Modal.Content>
