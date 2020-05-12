@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import RouteContainer from './RouteContainer'
+import RouteIndexContainer from './RouteIndexContainer'
 import LoginRegistrationForm from './LoginRegistrationForm'
+import MenuContainer from './MenuContainer'
 
 
 
@@ -10,7 +11,7 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedIn:false,
+      loggedIn: true, //CHANGE BACK TO FALSE
       loggedInUserEmail: ''
     }
 
@@ -76,15 +77,42 @@ export default class App extends Component {
 
 
 
+  logout = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + '/api/v1/users/logout'
+
+      const logoutResponse = await fetch(url, {
+        credentials: 'include',
+        'Accept': 'application/json'
+      })
+      console.log("logoutResponse", logoutResponse)
+      const logoutJson = await logoutResponse.json()
+      console.log("logoutJson", logoutJson)
+      if(logoutResponse.status === 200) {
+        this.setState({
+          loggedIn: false,
+          loggedInUserEmail: ''
+        })
+      }
+    } catch(error) {
+      console.error("There was an error logging out")
+      console.error(error)
+    }
+  }
+
+
 
   render() {
+    console.log("Here is process.env:")
+    console.log(process.env)
     return (
       <div className="App">
         {
           this.state.loggedIn
           ?
           <React.Fragment>
-          <RouteContainer />
+            <MenuContainer />
+            <RouteIndexContainer />
           </React.Fragment>
           :
           <LoginRegistrationForm 

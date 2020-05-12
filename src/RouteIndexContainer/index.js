@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import RouteList from '../RouteList'
+import MarkerDisplay from '../MarkerDisplay'
 
 
 export default class RouteContainer extends Component {
@@ -18,7 +20,6 @@ export default class RouteContainer extends Component {
 
    getRoutes = async () => {
     try {
-
       const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
       console.log("Trying to fetch data from:");
       console.log(url);
@@ -45,7 +46,11 @@ export default class RouteContainer extends Component {
     console.log(this.state);
 
     return(
-      <h2>Route Container</h2>
+      <React.Fragment>
+        <h2>Page for Routes Preview index</h2>
+        <RouteList routes={this.state.routes} />
+        <MarkerDisplay markers={this.state.markers} />
+      </React.Fragment>
     )
   }
 
