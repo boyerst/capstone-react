@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Label } from 'semantic-ui-react'
+import { Form, Button, Grid, Label, Segment, Message } from 'semantic-ui-react'
 
 export default class LoginRegisterForm extends Component {
 
@@ -9,29 +9,34 @@ export default class LoginRegisterForm extends Component {
     this.state = {
       email: '',
       password: '',
-      username: ''
+      username: '',
+      action: 'Login'
     }
   }
 
   render() {
     return (
-      <React.Fragment>
+      <Grid>
+      <Grid.Column>
+      <Segment>
         <Form>
-          <Label>Username:</Label>
+          {this.state.action==="Register"
+          &&
+            <Form.Input 
+              type="text"
+              name="username"
+              placeholder="Enter a username"
+              value={this.state.username}
+            />
+          }
+       
           <Form.Input 
             type="text"
             name="username"
             placeholder="Enter a username"
             value={this.state.username}
           />
-          <Label>Email:</Label>
-          <Form.Input 
-            type="text"
-            name="username"
-            placeholder="Enter a username"
-            value={this.state.username}
-          />
-          <Label>Password:</Label>
+      
           <Form.Input 
             type="text"
             name="username"
@@ -40,7 +45,22 @@ export default class LoginRegisterForm extends Component {
           />
           <Button type="Submit">Log In</Button>
         </Form>
-      </React.Fragment>      
+        </Segment>
+        <Message>
+        {
+          this.state.action==="Login"
+          ?
+          <Message>
+          Need an account? <span className="link" onClick={this.changeForm}>Register</span>
+          </Message> 
+          :
+          <Message>
+          Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
+          </Message>
+        }
+      </Message>
+      </Grid.Column>
+      </Grid>      
     )
   }
 } 
