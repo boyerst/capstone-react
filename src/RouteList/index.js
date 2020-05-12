@@ -7,6 +7,6 @@ export default function RouteList(props) {
   console.log(props)
 
   return (
-
-  
+    <h2>Route List</h2>
+  )
 } 

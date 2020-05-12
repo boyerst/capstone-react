@@ -14,8 +14,15 @@ export default class NewRouteForm extends Component {
     }
   }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
 
 
+   
+  handleOpen = () => this.setState({ modalOpen: true })
 
 
   render() {
@@ -35,43 +42,34 @@ export default class NewRouteForm extends Component {
           <Segment>
             <Form onSubmit={this.handleSubmit}>
               <Form.Input
-                name="name"
+                name="location"
                 type="text"
-                fluid icon="user"
+                fluid icon="location arrow"
                 iconPosition="left"
-                placeholder="Name"
+                placeholder="Location"
                 value={this.state.name}
                 onChange={this.handleChange}
               />
               <Form.Input
-                name="address"
+                name="length"
                 type="text"
-                fluid icon="address book"
+                fluid icon="exchange"
                 iconPosition="left"
-                placeholder="Address"
+                placeholder="Length"
                 value={this.state.address}
                 onChange={this.handleChange}
               />
               <Form.Input
-                name="zip_code"
+                name="comments"
                 type="text"
-                fluid icon="map marker alternate"
+                fluid icon="comment alternate outline"
                 iconPosition="left"
-                placeholder="Zip Code"
+                placeholder="Comments"
                 value={this.state.zip_code}
                 onChange={this.handleChange}
               />
-                <Form.Input
-                name="recommendations"
-                type="text"
-                fluid icon="food"
-                iconPosition="left"
-                placeholder="Recommendations"
-                value={this.state.recommendations}
-                onChange={this.handleChange}
-              />
               <Form.Input>
-                Rating: 
+                Skill Level: 
                 <Rating 
                   icon="star" 
                   maxRating={5} 
