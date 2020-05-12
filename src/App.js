@@ -17,7 +17,7 @@ export default class App extends Component {
   }
   
 
-   register = async (registrationInfo) => {
+  register = async (registrationInfo) => {
     console.log("Here is the lifted registration data:", registrationInfo);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/register'
     try {
@@ -46,8 +46,32 @@ export default class App extends Component {
 
 
 
-  login = (loginInfo) => {
-    console.log("login() in App.js called with the following info", loginInfo);    
+  login = async (loginInfo) => {
+    console.log("Here is the login info from App.js:", loginInfo);
+    const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
+
+    try {
+      const loginResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginInfo),
+      })
+      console.log("Here is the loginResponse", loginResponse);
+      const loginJson = await loginResponse.json()
+      console.log("Here is Login JSON after fetch", loginJson);
+      if(loginResponse.status === 200) {
+        this.setState({
+          loggedIn: true,
+          loggedInUserEmail: loginJson.data.email
+        })
+      }
+    } catch(error) {
+      console.error("Error in login route")
+      console.error(error)
+    }
   }
 
 
