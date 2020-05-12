@@ -17,6 +17,14 @@ export default class App extends Component {
   }
   
 
+  register = (registerInfo) => {
+    console.log("register() in App.js called with the following info", registerInfo);    
+  }
+
+  login = (loginInfo) => {
+    console.log("login() in App.js called with the following info", loginInfo);    
+  }
+
 
 
 
@@ -30,7 +38,10 @@ export default class App extends Component {
           <RouteContainer />
           </React.Fragment>
           :
-          <LoginRegistrationForm />
+          <LoginRegistrationForm 
+            login={this.login}
+            register={this.register}
+          />
         }
       </div>
     );    

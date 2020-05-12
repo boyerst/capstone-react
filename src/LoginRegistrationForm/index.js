@@ -32,6 +32,11 @@ export default class LoginRegisterForm extends Component {
     event.preventDefault()
     console.log(`LoginRegForm/index.js: You are attempting to ${this.state.action.toLowerCase()} with these inputs`)
     console.log(this.state);
+    if(this.state.action === "Register") {
+      this.props.register(this.state)
+    } else {
+      this.props.login(this.state)
+    }
   }
 
   render() {
