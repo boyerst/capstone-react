@@ -22,6 +22,12 @@ export default class LoginRegisterForm extends Component {
     }
   }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render() {
     return (
       <Grid>
@@ -33,23 +39,24 @@ export default class LoginRegisterForm extends Component {
                 <Form.Input 
                   type="text"
                   name="username"
-                  placeholder="Enter a username"
+                  placeholder="Username"
                   value={this.state.username}
+                  onChange={this.handleChange}
                 />
               }
-           
               <Form.Input 
-                type="text"
-                name="username"
-                placeholder="Enter a username"
-                value={this.state.username}
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.handleChange}
               />
-          
               <Form.Input 
-                type="text"
-                name="username"
-                placeholder="Enter a username"
-                value={this.state.username}
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleChange}
               />
               <Button type= "Submit" color="grey" fluid size="large">
                 {this.state.action==="Login" ? "Log In": "Register"}
