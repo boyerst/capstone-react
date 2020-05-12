@@ -28,6 +28,9 @@ export default class RouteContainer extends Component {
       const routesJson = await routesResponse.json()
       console.log("here is the data we got in getRoutes in RouteContainer:");
       console.log(routesJson);
+      this.setState({
+        routes:routesJson.data
+      })
     } catch(err) {
       console.error("Error getting route data.", err)
     }
@@ -36,6 +39,9 @@ export default class RouteContainer extends Component {
 
 
   render() {
+    console.log("here is this.state in render() in RouteContainer");
+    console.log(this.state);
+
     return(
       <h2>Route Container</h2>
     )

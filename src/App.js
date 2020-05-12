@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import RouteContainer from './RouteContainer'
+import LoginRegistrationForm from './LoginRegistrationForm'
 
 
 
@@ -9,7 +10,8 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      routes: []
+      loggedIn:false,
+      loggedInUserEmail: ''
     }
 
   }
@@ -19,13 +21,18 @@ export default class App extends Component {
 
 
   render() {
-  console.log(process.env)
-    return(
-      <React.Fragment>
-        <RouteContainer />
-      </React.Fragment>
-    )
+    return (
+      <div className="App">
+        {
+          this.state.loggedIn
+          ?
+          <React.Fragment>
+          <RouteContainer />
+          </React.Fragment>
+          :
+          <LoginRegistrationForm />
+        }
+      </div>
+    );    
   }
-
 }
-
