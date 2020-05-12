@@ -28,12 +28,18 @@ export default class LoginRegisterForm extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(`LoginRegForm/index.js: You are attempting to ${this.state.action.toLowerCase()} with these inputs`)
+    console.log(this.state);
+  }
+
   render() {
     return (
       <Grid>
         <Grid.Column>
           <Segment>
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
               {this.state.action==="Register"
               &&
                 <Form.Input 
