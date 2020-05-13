@@ -46,7 +46,7 @@ export default class NewRouteForm extends Component {
     primary="true"
     className="createRoute"
     basic size= "large" 
-    trigger={<Button onClick={this.handleOpen}>Add New Route</Button>}
+    trigger={<Button style={{float: "right"}} onClick={this.handleOpen}>Add New Route</Button>}
     open={this.state.modalOpen}
     onClose={this.handleClose}
     >

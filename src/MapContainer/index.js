@@ -6,6 +6,6 @@ export default function Markers(props) {
   console.log(props)
 
   return (
-    <h3>Markers</h3>
+    <h3>MapContainer</h3>
   )
 } 

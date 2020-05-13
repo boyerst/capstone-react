@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import RouteList from '../RouteList'
-import Markers from '../Markers'
+import MapContainer from '../MapContainer'
 import NewRouteForm from '../NewRouteForm'
 
 
@@ -88,7 +88,7 @@ export default class RouteIndexContainer extends Component {
         <h2>Page for Routes Preview index</h2>
         <NewRouteForm createRoute={this.createRoute}/>
         <RouteList routes={this.state.routes} />
-        <Markers markers={this.state.markers} />
+        <MapContainer markers={this.state.markers} />
       </React.Fragment>
     )
   }

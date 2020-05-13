@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Image, Item, Rating, Grid, Segment } from 'semantic-ui-react'
+import { Button, Item, Rating } from 'semantic-ui-react'
 import StackGrid from "react-stack-grid";
 
 export default function RouteList(props) {
@@ -16,14 +16,33 @@ export default function RouteList(props) {
       >
         <Item.Group relaxed>
           <Item>
-            <Item.Image size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
+            <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
             <Item.Content verticalAlign='middle'>
               <Item.Header>{route.location}</Item.Header> 
                   <br/>
                   <br/>
               <Rating icon="star" maxRating="5" rating={route.skill_level} disabled/>
-              <Item.Description align="left">{route.comments}</Item.Description>
+              <Item.Description style={{marginRight: 130}} align="left">{route.comments}</Item.Description>
               <Item.Extra align="left">{route.length}</Item.Extra>
+              <Button.Group style={{position: 'absolute', right: 0, bottom: 150}}>
+                <Button 
+                  icon="delete"
+                  color='red' 
+                  size="mini"
+                  inverted
+                  onClick={ () => props.deleteRoute(route.id) }
+                >
+                </Button>
+                <Button.Or />
+                <Button 
+                  icon="edit outline"
+                  color='green' 
+                  size="mini"
+                  inverted
+                  onClick={ () => props.editRoute(route.id) }
+                >
+                </Button>
+              </Button.Group>
               <Item.Extra>
                 <Button floated='right'>See More</Button>
               </Item.Extra>
