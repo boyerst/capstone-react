@@ -3,6 +3,7 @@ import './App.css';
 import RouteIndexContainer from './RouteIndexContainer'
 import LoginRegistrationForm from './LoginRegistrationForm'
 import MenuContainer from './MenuContainer'
+import MapContainer from './MapContainer'
 
 
 
@@ -113,6 +114,7 @@ export default class App extends Component {
           <React.Fragment>
             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
             <RouteIndexContainer />
+            <MapContainer />
           </React.Fragment>
           :
           <LoginRegistrationForm 

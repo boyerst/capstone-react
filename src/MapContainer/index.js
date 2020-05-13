@@ -9,8 +9,8 @@ const mapStyles = {
 };
 
 export class MapContainer extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       markers: [],
       showingInfoWindow: false,       // hides or the shows the infoWindow
@@ -20,6 +20,10 @@ export class MapContainer extends Component {
 
   }
 
+  componentDidMount() {
+    // get the dogs when this component is first rendered
+    this.getMarkers()
+  }
 
   onMarkerClick = (props, marker, e) =>
   this.setState({
@@ -37,11 +41,33 @@ export class MapContainer extends Component {
     }
   };
 
-
+  getMarkers = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/markers/all"
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      const markersResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(markersResponse);
+      const markersJson = await markersResponse.json()
+      console.log("Here is the data we got in getMarkers in MapContainer:");
+      console.log(markersJson);
+      this.setState({
+        markers:markersJson.data
+      })
+    } catch(err) {
+      console.error("Error getting marker data.", err)
+    }
+  }
 
 
   render() {
+    console.log("Here is this.state in render() MapContainer")
+    console.log(this.state)
     return (
+
       <CurrentLocation
         centerAroundCurrentLocation
         google={this.props.google}
