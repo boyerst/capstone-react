@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RouteList from '../RouteList'
 import MapContainer from '../MapContainer'
 import NewRouteForm from '../NewRouteForm'
+import EditRouteForm from '../EditRouteForm'
 
 
 export default class RouteIndexContainer extends Component {
@@ -9,7 +10,8 @@ export default class RouteIndexContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      routes: []
+      routes: [],
+      idOfRouteToEdit: -1
     }
 
   }
@@ -71,7 +73,12 @@ export default class RouteIndexContainer extends Component {
     }
   }
 
-
+  editRoute = async (idOfRouteToEdit) => {
+    console.log("Here is the Route you are trying to edit:", idOfRouteToEdit)
+    this.setState({
+      idOfRouteToEdit: idOfRouteToEdit
+    })
+  }
 
 
 
@@ -86,8 +93,22 @@ export default class RouteIndexContainer extends Component {
     return(
       <React.Fragment>
         <h2>Page for Routes Preview index</h2>
-        <NewRouteForm createRoute={this.createRoute}/>
-        <RouteList routes={this.state.routes} />
+        <NewRouteForm 
+          createRoute={this.createRoute}
+          />
+        <RouteList 
+          routes={this.state.routes} 
+          editRoute={this.editRoute}
+          />
+        {
+          this.state.idOfRouteToEdit !== -1
+          &&
+        <EditRouteForm
+          key={this.state.idOfRouteToEdit}
+          routeToEdit={this.state.routes.find((route) => route.id === this.state.idOfRouteToEdit)}
+          closeModal={this.closeModal}
+        />
+        }
         <MapContainer markers={this.state.markers} />
       </React.Fragment>
     )
