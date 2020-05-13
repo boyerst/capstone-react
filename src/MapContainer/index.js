@@ -21,7 +21,7 @@ export class MapContainer extends Component {
   }
 
   componentDidMount() {
-    // get the dogs when this component is first rendered
+    // get the markers when this component is first rendered
     this.getMarkers()
   }
 
@@ -55,7 +55,7 @@ export class MapContainer extends Component {
       console.log("Here is the data we got in getMarkers in MapContainer:");
       console.log(markersJson);
       this.setState({
-        markers:markersJson.data
+        markers: markersJson
       })
     } catch(err) {
       console.error("Error getting marker data.", err)
