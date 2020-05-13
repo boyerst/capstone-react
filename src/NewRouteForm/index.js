@@ -15,6 +15,13 @@ export default class NewRouteForm extends Component {
   }
 
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+  
+
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.createRoute(this.state) 
@@ -24,13 +31,6 @@ export default class NewRouteForm extends Component {
       skill_level: '',
       comments: '',
       modalOpen: false
-    })
-  }
-
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
     })
   }
 

@@ -84,6 +84,62 @@ export default class RouteIndexContainer extends Component {
 
 
 
+  updateRoute = async (updatedRouteInfo) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + this.state.idOfRouteToEdit
+    try {
+      const updatedRouteResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'PUT',
+        body: JSON.stringify(updatedRouteInfo), 
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      console.log("updatedRouteResponse", updatedRouteResponse)
+      const updatedRouteJson = await updatedRouteResponse.json()
+      console.log("updatedRouteJson", updatedRouteJson);
+      if(updatedRouteResponse.status == 200) {
+        const routes = this.state.routes
+        const indexOfRouteBeingUpdated = routes.findIndex(route => route.id == this.state.idOfRouteToEdit)
+        routes[indexOfRouteBeingUpdated] = updatedRouteJson.data
+        this.setState({
+          routes: routes,
+          idOfRouteToEdit: -1
+        })
+      }
+     
+
+    } catch(error) {
+      console.error("There was an error updating the Route")
+      console.error(error)
+    }
+
+
+  }
+
+
+  deleteRoute = async (idOfRouteToDelete) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + idOfRouteToDelete
+    try {
+      const deleteRouteResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'DELETE'
+      })
+      console.log("deleteRouteResponse", deleteRouteResponse)
+      const deleteRouteJson = await deleteRouteResponse.json()
+      console.log("deleteRouteJson", deleteRouteJson)
+      this.setState({
+        routes: this.state.routes.filter(route => route.id != idOfRouteToDelete)
+      })
+
+    } catch (error) {
+      console.log("There was an error deleting the Route")
+      console.log(error)
+    }
+  }
+
+
+
 
 
   render() {
@@ -99,6 +155,7 @@ export default class RouteIndexContainer extends Component {
         <RouteList 
           routes={this.state.routes} 
           editRoute={this.editRoute}
+          deleteRoute={this.deleteRoute}
           />
         {
           this.state.idOfRouteToEdit !== -1
@@ -106,6 +163,7 @@ export default class RouteIndexContainer extends Component {
         <EditRouteForm
           key={this.state.idOfRouteToEdit}
           routeToEdit={this.state.routes.find((route) => route.id === this.state.idOfRouteToEdit)}
+          updateRoute={this.updateRoute}
           closeModal={this.closeModal}
         />
         }

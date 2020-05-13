@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Item, Rating } from 'semantic-ui-react'
+import { Button, Item, Rating, Icon } from 'semantic-ui-react'
 import StackGrid from "react-stack-grid";
 
 export default function RouteList(props) {
