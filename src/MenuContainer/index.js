@@ -33,7 +33,7 @@ render(props) {
         <Menu.Item
           name='routes'
           active={activeItem === 'routes'}
-          onClick={this.props.routes}
+          // onClick={ () => props.getRoutes(route.id) }
         />
         <Menu.Item
           name='logout'

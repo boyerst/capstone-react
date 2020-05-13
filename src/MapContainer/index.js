@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import CurrentLocation from './Map.js';
 
+
+import { Form, Button, Segment, Modal, Header, Rating, Icon } from 'semantic-ui-react'
+
+
+
+
 const mapStyles = {
   width: '60%',
   height: '60%'
@@ -63,27 +69,33 @@ export class MapContainer extends Component {
   }
 
 
+
+//this will appear when user hits button in menu bar???
   render() {
     console.log("Here is this.state in render() MapContainer")
     console.log(this.state)
     return (
-
-      <CurrentLocation
-        centerAroundCurrentLocation
-        google={this.props.google}
-      >
-        <Marker onClick={this.onMarkerClick} name={'current location'} />
-        
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
+      <React.Fragment>
+        <CurrentLocation
+          centerAroundCurrentLocation
+          google={this.props.google}
         >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-      </CurrentLocation>
+          <Marker onClick={this.onMarkerClick} name={'current location'} />
+          
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+          </InfoWindow>
+        </CurrentLocation>
+
+      </React.Fragment>
+     
+      // ABOVE: </MarkerMapShowContainer this.state.markers>
     );
   }
 }

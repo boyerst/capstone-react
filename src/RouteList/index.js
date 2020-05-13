@@ -18,7 +18,7 @@ export default function RouteList(props) {
           <Item>
             <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
             <Item.Content verticalAlign='middle'>
-              <Item.Header>{route.location}</Item.Header> 
+              <Item.Header>{route.location}</Item.Header>
                   <br/>
                   <br/>
               <Rating icon="star" maxRating="5" rating={route.skill_level} disabled/>
@@ -44,7 +44,11 @@ export default function RouteList(props) {
                 </Button>
               </Button.Group>
               <Item.Extra>
-                <Button floated='right'>See More</Button>
+                <Button 
+                  floated='right'
+                  onClick={ () => props.getRoute(route.id) }
+                  >See More
+                </Button> 
               </Item.Extra>
             </Item.Content>
           </Item>

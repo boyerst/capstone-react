@@ -35,7 +35,13 @@ export default class NewRouteForm extends Component {
   }
 
   handleRate = (event, { rating, maxRating }) =>
-    this.setState({ rating, maxRating })
+    this.setState({ 
+      skill_level: rating,
+    })
+
+
+  
+
 
   handleOpen = () => this.setState({ modalOpen: true })
 
@@ -87,6 +93,8 @@ export default class NewRouteForm extends Component {
                 Skill Level: 
                 <Rating 
                   icon="star" 
+                  name="skill_level"
+                  type="rating"
                   maxRating={5} 
                   onRate={this.handleRate} 
                   defaultRating={0} 
