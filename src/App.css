@@ -3,3 +3,12 @@
 }
 
 
+.map {
+  display: flex;
+  margin-top: 500px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+}

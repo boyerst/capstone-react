@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import '../App.css';
 
 const mapStyles = {
   map: {
@@ -98,7 +98,7 @@ constructor(props) {
   render() {
      const style = Object.assign({}, mapStyles.map);
     return (
-      <div>
+      <div className="map">
         <div style={style} ref="map">
           Loading map...
         </div>

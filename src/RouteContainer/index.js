@@ -6,7 +6,7 @@ import EditRouteForm from '../EditRouteForm'
 import RouteShow from '../RouteShow'
 import { Link } from 'semantic-ui-react'
 
-export default class RouteIndexContainer extends Component {
+export default class RouteContainer extends Component {
 
   constructor(props) {
     super(props)
@@ -60,7 +60,7 @@ export default class RouteIndexContainer extends Component {
       console.log("Here is the Response from the fetch call:");
       console.log(routeResponse);
       const routeJson = await routeResponse.json()
-      console.log("Here is the data we got in getRoutes in RouteContainer:");
+      console.log("Here is the data we got in getRoutes() in RouteContainer:");
       console.log(routeJson);
       this.setState({
         idOfRouteToGet: idOfRouteToGet
@@ -199,11 +199,14 @@ export default class RouteIndexContainer extends Component {
           />
         : //if not
         <div>
+          
           <RouteShow 
-          routeToGet={this.idOfRouteToGet}
+          routeToGet={this.state.idOfRouteToGet} 
+          routes={this.state.routes}
+          
         />
-          <MapContainer />
-         <a onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
+          <MapContainer routes={this.state.routes} />
+         <a style={{float: "right"}} onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
         </div>
 
         }

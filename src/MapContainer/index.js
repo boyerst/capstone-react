@@ -2,9 +2,11 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import CurrentLocation from './Map.js';
+import RouteShow from '../RouteShow'
 
+// import RouteContainer from '../RouteContainer'
+// import { Form, Button, Segment, Modal, Header, Rating, Icon } from 'semantic-ui-react'
 
-import { Form, Button, Segment, Modal, Header, Rating, Icon } from 'semantic-ui-react'
 
 
 
@@ -72,13 +74,17 @@ export class MapContainer extends Component {
 
 //this will appear when user hits button in menu bar???
   render() {
-    console.log("Here is this.state in render() MapContainer")
+    console.log("Here is this.state from render() in MapContainer")
     console.log(this.state)
     return (
-      <React.Fragment>
+      <React.Fragment >
+        <h2>MapContainer: pass route data into here? Then can post route info and place markers on map from MapContainer?</h2>
+        <RouteShow markers={this.state.markers}/>
+        
         <CurrentLocation
           centerAroundCurrentLocation
           google={this.props.google}
+
         >
           <Marker onClick={this.onMarkerClick} name={'current location'} />
           
