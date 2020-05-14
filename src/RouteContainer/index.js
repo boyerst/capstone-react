@@ -4,7 +4,7 @@ import MapContainer from '../MapContainer'
 import NewRouteForm from '../NewRouteForm'
 import EditRouteForm from '../EditRouteForm'
 import RouteShow from '../RouteShow'
-
+import { Link } from 'semantic-ui-react'
 
 export default class RouteIndexContainer extends Component {
 
@@ -22,6 +22,8 @@ export default class RouteIndexContainer extends Component {
   componentDidMount() {
     this.getRoutes()
   }
+
+ 
 
   getRoutes = async () => {
     try {
@@ -62,6 +64,7 @@ export default class RouteIndexContainer extends Component {
       console.log(routeJson);
       this.setState({
         idOfRouteToGet: idOfRouteToGet
+   
       })
     } catch(err) {
       console.error("Error getting route data.", err)
@@ -179,7 +182,7 @@ export default class RouteIndexContainer extends Component {
 
     return(
       <React.Fragment>
-        <h2>Page for Routes Preview index</h2>
+        <h2>WMATracks</h2>
         <NewRouteForm 
           createRoute={this.createRoute}
           //this is on the main page: it opens as a modal
@@ -197,10 +200,10 @@ export default class RouteIndexContainer extends Component {
         : //if not
         <div>
           <RouteShow 
-          // key={this.state.idOfRouteToGet}
           routeToGet={this.idOfRouteToGet}
         />
-        <a> Back To List </a> on lcick to change state to -1
+          <MapContainer />
+         <a onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
         </div>
 
         }
