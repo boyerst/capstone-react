@@ -16,6 +16,7 @@ constructor(props) {
     super(props);
     const { lat, lng } = this.props.initialCenter;
     this.state = {
+    
       currentLocation: {
         lat: lat,
         lng: lng

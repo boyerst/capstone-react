@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow, Style } from 'google-maps-react';
 import CurrentLocation from './Map.js';
 import RouteShow from '../RouteShow'
 import NewMarkersForm from '../NewMarkersForm'
@@ -21,6 +21,7 @@ export class MapContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      position: [],
       markers: [],
       showingInfoWindow: false,       // hides or the shows the infoWindow
       activeMarker: {},          //shows the active marker when clicked
@@ -108,38 +109,44 @@ export class MapContainer extends Component {
 
 
 
-//this will appear when user hits button in menu bar???
   render() {
     console.log("Here is this.state from render() in MapContainer")
     console.log(this.state)
-    return (
+        return (
       <React.Fragment>
         <h2>MapContainer: pass route data into here? Then can post route info and place markers on map from MapContainer?</h2>
         <p>Hello</p>
-
+          <Map
+            google={this.props.google}
+            zoom={14}
+           
+            
+          >
+          <Marker
+            position={{ lat: 41.8781, lng: -87.6298 }}
+            onClick={this.onMarkerClick}
+            name={'Plug in name props here'}
+          />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+          </InfoWindow>
+        </Map>
 
 
         <NewMarkersForm createMarker={this.createMarker}/>
 
 
-        <CurrentLocation
 
-          centerAroundCurrentLocation
-          google={this.props.google}>
-          <Marker onClick={this.onMarkerClick} name={'current location'} />
-          <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-            onClose={this.onClose}>
-            <div>
-              <h4>{this.state.selectedPlace.name}</h4>
-            </div>
-          </InfoWindow>
-        </CurrentLocation>
 
       </React.Fragment>
      
-      // ABOVE: </MarkerMapShowContainer this.state.markers>
+
     );
   }
 }
