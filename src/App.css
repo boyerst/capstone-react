@@ -3,7 +3,16 @@
 }
 
 
-.map {
+
+.map-style {
+  /*position: absolute;*/
+  width: 60%;
+  height: 60%;
+  margin-bottom: 500px;
+  }
+
+
+/*.map {
   display: flex;
   margin-top: 500px;
   flex-direction: row;
@@ -11,4 +20,4 @@
   justify-content: flex-end;
   align-content: center;
   align-items: center;
-}
+}*/
