@@ -52,7 +52,7 @@ constructor(props) {
             currentLocation: {
               lat: coords.latitude,
               lng: coords.longitude
-            }
+            },
           });
         });
       }

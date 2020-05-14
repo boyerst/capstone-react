@@ -200,11 +200,9 @@ export default class RouteContainer extends Component {
         : //if not
         <div>
           
-          <RouteShow 
-          routeToGet={this.state.idOfRouteToGet} 
-          routes={this.state.routes}
+        
           
-        />
+        
           <MapContainer routes={this.state.routes} />
          <a style={{float: "right"}} onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
         </div>

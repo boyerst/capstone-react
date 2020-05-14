@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import CurrentLocation from './Map.js';
 import RouteShow from '../RouteShow'
+import NewMarkersForm from '../NewMarkersForm'
 
 // import RouteContainer from '../RouteContainer'
 // import { Form, Button, Segment, Modal, Header, Rating, Icon } from 'semantic-ui-react'
@@ -26,7 +27,11 @@ export class MapContainer extends Component {
       selectedPlace: {}          //shows infoWindow fo selected place/ marker
     };
 
+
+
   }
+
+
 
   componentDidMount() {
     // get the markers when this component is first rendered
@@ -70,6 +75,37 @@ export class MapContainer extends Component {
     }
   }
 
+  createMarker = async (markerToAdd) => {
+  console.log("Here is the marker you are trying to create:")
+  console.log(markerToAdd)
+  try {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/"
+
+    const createMarkerResponse = await fetch(url, {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(markerToAdd) //error here because decimal? 
+    })
+    const createMarkerJson = await createMarkerResponse.json()
+    console.log("Here is the result of createMarker:")
+    console.log(createMarkerJson)
+
+    if(createMarkerResponse.status === 201) {
+      const markers = this.state.markers
+      markers.push(createMarkerJson.data)
+      this.setState({
+        markers: markers
+      })
+    }
+    } catch (error){
+      console.log(error)
+      console.log("There was an error creating the Marker")
+    }
+  }
+
 
 
 //this will appear when user hits button in menu bar???
@@ -77,22 +113,24 @@ export class MapContainer extends Component {
     console.log("Here is this.state from render() in MapContainer")
     console.log(this.state)
     return (
-      <React.Fragment >
+      <React.Fragment>
         <h2>MapContainer: pass route data into here? Then can post route info and place markers on map from MapContainer?</h2>
-        <RouteShow markers={this.state.markers}/>
-        
-        <CurrentLocation
-          centerAroundCurrentLocation
-          google={this.props.google}
+        <p>Hello</p>
 
-        >
+
+
+        <NewMarkersForm createMarker={this.createMarker}/>
+
+
+        <CurrentLocation
+
+          centerAroundCurrentLocation
+          google={this.props.google}>
           <Marker onClick={this.onMarkerClick} name={'current location'} />
-          
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
-            onClose={this.onClose}
-          >
+            onClose={this.onClose}>
             <div>
               <h4>{this.state.selectedPlace.name}</h4>
             </div>
