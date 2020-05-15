@@ -3,6 +3,8 @@ import RouteList from '../RouteList'
 import MapContainer from '../MapContainer'
 import NewRouteForm from '../NewRouteForm'
 import EditRouteForm from '../EditRouteForm'
+import '../App.css'
+
 // import RouteShow from '../RouteShow'
 import { Link } from 'semantic-ui-react'
 
@@ -13,13 +15,15 @@ export default class RouteContainer extends Component {
     this.state = {
       routes: [],
       idOfRouteToEdit: -1,
-      idOfRouteToGet: -1
+      idOfRouteToGet: -1,
+      routeToGet: null
     }
 
   }
   
 
   componentDidMount() {
+    // this.getAllRoutes()
     this.getRoutes()
   }
 
@@ -48,6 +52,30 @@ export default class RouteContainer extends Component {
 
 
 
+  // getAllRoutes = async () => {
+  //   try {
+  //     const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all/"
+  //     console.log("Trying to fetch data from:");
+  //     console.log(url);
+  //     const routesResponse = await fetch(url, {
+  //       credentials: 'include',
+  //       headers: {
+  //       'Content-Type': 'application/json'
+  //       },
+  //     })
+  //     console.log("Here is the Response from the fetch call:");
+  //     console.log(routesResponse);
+  //     const routesJson = await routesResponse.json()
+  //     console.log("Here is the data we got in getAllRoutes in RouteContainer:");
+  //     console.log(routesJson);
+  //     this.setState({
+  //       routes:routesJson.data
+  //     })
+  //   } catch(err) {
+  //     console.error("Error getting route data.", err)
+  //   }
+  // }
+
   getRoute = async (idOfRouteToGet) => {
     console.log("you are trying to get route with id: ", idOfRouteToGet)
     try {
@@ -60,10 +88,11 @@ export default class RouteContainer extends Component {
       console.log("Here is the Response from the fetch call:");
       console.log(routeResponse);
       const routeJson = await routeResponse.json()
-      console.log("Here is the data we got in getRoutes() in RouteContainer:");
+      console.log("Here is the data we got in getRoute() in RouteContainer:");
       console.log(routeJson);
       this.setState({
-        idOfRouteToGet: idOfRouteToGet
+        idOfRouteToGet: idOfRouteToGet,
+        routeToGet: routeJson
    
       })
     } catch(err) {
@@ -176,6 +205,7 @@ export default class RouteContainer extends Component {
 
 
 
+
   render() {
     console.log("Here is this.state in render() in RouteContainer");
     console.log(this.state);
@@ -201,10 +231,9 @@ export default class RouteContainer extends Component {
         <div>
           
         
-          
-        
-          <MapContainer routes={this.state.routes} />
-         <a style={{float: "right"}} onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
+       
+          <MapContainer routeToGet={this.state.routeToGet} routes={this.state.routes} />
+         <a className="link" onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
         </div>
 
         }
@@ -224,8 +253,10 @@ export default class RouteContainer extends Component {
         
         
       </React.Fragment>
+
     )
   }
+  
 }
 
 

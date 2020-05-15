@@ -28,9 +28,13 @@ export default class EditRouteForm extends Component {
   }
 
 
-  handleRate = (event, { skill_level, maxRating }) => {
-    this.setState({ skill_level, maxRating })
-  }
+  // handleRate = (event, { skill_level, maxRating }) => {
+  //   this.setState({ skill_level, maxRating })
+  // }
+  handleRate = (event, { rating, maxRating }) =>
+    this.setState({ 
+      skill_level: rating,
+    })
 
 
 
@@ -49,7 +53,7 @@ render() {
                 fluid icon="location arrow"
                 iconPosition="left"
                 placeholder="Location"
-                value={this.state.name}
+                value={this.state.location}
                 onChange={this.handleChange}
               />
               <Form.Input
@@ -80,6 +84,7 @@ render() {
                   rating={this.skill_level}
                   // skill_level={this.skill_level}
                   // value={this.state.skill_level}
+                  placeholder={this.skill_level}
                   icon="star" 
                   maxRating={5} 
                   onRate={this.handleRate} 

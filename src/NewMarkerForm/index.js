@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button, Icon, Segment, Header, Rating, Modal } from 'semantic-ui-react'
+import '../App.css';
+
 
 export default class NewMarkerForm extends Component {
   constructor(props) {
@@ -43,7 +45,7 @@ export default class NewMarkerForm extends Component {
     primary="true"
     className="createMarker"
     basic size= "large" 
-    trigger={<Button style={{float: "right"}} onClick={this.handleOpen}>Add New Marker</Button>}
+    trigger={<Button className="newMarker" onClick={this.handleOpen}>Add New Marker</Button>}
     open={this.state.modalOpen}
     onClose={this.handleClose}
     >
@@ -53,6 +55,15 @@ export default class NewMarkerForm extends Component {
         <Modal.Content>
           <Segment>
             <Form onSubmit={this.handleSubmit}>
+              <Form.Input
+                name="route_id"
+                type="number"
+                fluid icon="numbered list"
+                iconPosition="left"
+                placeholder="Route ID"
+                value={this.state.route_id}
+                onChange={this.handleChange}
+              />
               <Form.Input
                 name="latitude"
                 type="text"
@@ -97,7 +108,7 @@ export default class NewMarkerForm extends Component {
                   color="green" 
                   onClick={this.handleClose}>
                     <Icon name='plus' />
-                  Add Markers
+                  Add Marker
                 </Button>
                 &nbsp;
                 <Button 

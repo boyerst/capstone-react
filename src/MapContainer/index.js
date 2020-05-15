@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow, Style } from 'google-maps-react';
 import CurrentLocation from './Map.js';
 // import RouteShow from '../RouteShow'
-import NewMarkersForm from '../NewMarkersForm'
+import NewMarkerForm from '../NewMarkerForm'
 import MapRenderer from '../MapRenderer'
+import '../App.css'
 
 // import RouteContainer from '../RouteContainer'
 // import { Form, Button, Segment, Modal, Header, Rating, Icon } from 'semantic-ui-react'
@@ -13,15 +14,12 @@ import MapRenderer from '../MapRenderer'
 
 
 
-const mapStyles = {
-  width: '60%',
-  height: '60%'
-};
-
 export class MapContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+//add idOfRouteToGet here to pass down to MapRenderer?:
+
       position: [],
       markers: [],
       showingInfoWindow: false,       // hides or the shows the infoWindow
@@ -36,6 +34,7 @@ export class MapContainer extends Component {
     // get the markers when this component is first rendered
     this.getMarkers()
   }
+
 
 
 
@@ -100,16 +99,23 @@ export class MapContainer extends Component {
     }
   }
 
+
+
+
+
+
   render() {
+
     console.log("Here is this.state from render() in MapContainer")
     console.log(this.state)
+
 
     return(
       
       <React.Fragment>
-        <h2>Hello</h2>
-        <NewMarkersForm createMarker={this.createMarker}/>
-        <MapRenderer style={mapStyles} markers={this.state.markers}/>
+
+        <NewMarkerForm createMarker={this.createMarker}/>
+        <MapRenderer  routeToGet={this.props.routeToGet} markers={this.state.markers}/>
       </React.Fragment>
     )
   }

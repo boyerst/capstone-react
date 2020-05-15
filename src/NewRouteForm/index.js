@@ -52,7 +52,7 @@ export default class NewRouteForm extends Component {
     primary="true"
     className="createRoute"
     basic size= "large" 
-    trigger={<Button style={{float: "right"}} onClick={this.handleOpen}>Add New Route</Button>}
+    trigger={<Button className="new-route" onClick={this.handleOpen}>Add New Route</Button>}
     open={this.state.modalOpen}
     onClose={this.handleClose}
     >
@@ -67,7 +67,7 @@ export default class NewRouteForm extends Component {
                 type="text"
                 fluid icon="location arrow"
                 iconPosition="left"
-                placeholder="Location"
+                placeholder="Start Point"
                 value={this.state.name}
                 onChange={this.handleChange}
               />
