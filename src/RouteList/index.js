@@ -7,9 +7,9 @@ export default function RouteList(props) {
 
 
 
-     console.log(props.email)
-     console.log("here is props in RouteLkist")
-     console.log(props)
+     // console.log(props.email)
+     // console.log("here is props in RouteLkist")
+     // console.log(props)
 
 
   const routes = props.routes.map(route => {
@@ -30,9 +30,9 @@ export default function RouteList(props) {
               <Rating icon="star" maxRating="5" rating={route.skill_level} disabled/>
               <Item.Description style={{marginRight: 130}} align="left">{route.comments}</Item.Description>
               <Item.Extra align="left">{route.length}</Item.Extra>
+              
               { route.user_id.email == props.email &&
               
-             
               <Button.Group style={{position: 'absolute', right: 0, bottom: 150}}>
                 <Button 
                   icon="delete"
@@ -53,7 +53,8 @@ export default function RouteList(props) {
                 </Button>
               </Button.Group>
              
-            }
+              }
+              
               <Item.Extra>
                 <Button 
                   floated='right'

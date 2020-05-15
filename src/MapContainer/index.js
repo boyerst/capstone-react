@@ -115,7 +115,7 @@ export class MapContainer extends Component {
       <React.Fragment>
 
         <NewMarkerForm createMarker={this.createMarker}/>
-        <MapRenderer  routeToGet={this.props.routeToGet} markers={this.state.markers}/>
+        <MapRenderer  routeToGet={this.props.routeToGet} />
       </React.Fragment>
     )
   }

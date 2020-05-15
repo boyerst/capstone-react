@@ -18,7 +18,7 @@ export default class RouteContainer extends Component {
       idOfRouteToGet: -1,
       routeToGet: null,
       loggedInUserEmail: null,
-      showButtons: false
+   
 
 
     }
@@ -31,6 +31,11 @@ export default class RouteContainer extends Component {
     this.getAllRoutes()
   }
 
+  returnToList = () => {
+    this.setState({
+      idOfRouteToGet: -1
+    })
+  }
 
 
  
@@ -75,7 +80,8 @@ export default class RouteContainer extends Component {
       console.log("Here is the data we got in getAllRoutes in RouteContainer:");
       console.log(routesJson);
       this.setState({
-        routes:routesJson.data
+        routes:routesJson.data,
+
       })
     } catch(err) {
       console.error("Error getting route data.", err)
@@ -234,7 +240,7 @@ export default class RouteContainer extends Component {
           editRoute={this.editRoute}
           deleteRoute={this.deleteRoute}
           getRoute={this.getRoute}
-          showButtons={this.state.showButtons}
+         
           />
         : //if not
         <div>
@@ -242,8 +248,9 @@ export default class RouteContainer extends Component {
         
        
           <MapContainer routeToGet={this.state.routeToGet} routes={this.state.routes} />
-         <a className="link" onClick={event =>  window.location.href='/routes/all/'}>Back To All Routes</a>
+          <a className="link" onClick={this.returnToList}>Back To All Routes</a>
         </div>
+         // <a className="link" onClick={event =>  window.location.href='/routes/all/'}>Back To All Routes</a>
 
         }
         {
