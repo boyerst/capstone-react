@@ -15,31 +15,34 @@ const mapStyles =
   }
 
 
-
 function MapRenderer(props) {
 
-  console.log("Here are the props in MapRenderer(includes markers but does not specify which route we want to see):")
+  const routes = props.routeToGet.marker
+  console.log("Here are the props in MapRenderer from /markers/all:")
   console.log(props)
-  // console.log(props.routeToGet.data.id)
-  console.log("Here is the routeToGet from MapRenderer (does not include markers):")
-  console.log(props.routeToGet) //THIS IS THE ROUTE YOU WANT TO LOOP THRU!!!
-  console.log(props.routeToGet.marker[0].latitude)
-  // console.log(props.routeToGet.data.comments)
-  // const route_id = props.routeToGet.data.id
-  // console.log(route_id)
-//since its a list you need a second loop
-//change key to amrkerS, bevause its a liost of MARKERS
+  console.log("Here is the routeToGet from MapRenderer:")
+  console.log(props.routeToGet) 
 
-  const markers = props.markers.map(marker => {
-    return (
-     <Marker 
-      key={marker.id}
-      position={{lat: marker.latitude, lng: marker.longitude }}
-     
+
+  // const markers_arr = 
+  const markers = props.routeToGet.marker.map(marker => {
+    return(
+      <Marker key={marker.id}
+      position={{lat: marker.latitude, lng: marker.longitude}}
       />
-      
     )
-  }) 
+  })
+
+  // const markers = props.markers.map(marker => {
+  //   return (
+  //    <Marker 
+  //     key={marker.id}
+  //     position={{lat: marker.latitude, lng: marker.longitude }}
+     
+  //     />
+      
+  //   )
+  // }) 
 
 
 
