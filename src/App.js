@@ -12,7 +12,7 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedIn: true, //CHANGE BACK TO FALSE
+      loggedIn: false, //CHANGE BACK TO FALSE
       loggedInUserEmail: ''
     }
 
@@ -104,8 +104,8 @@ export default class App extends Component {
 
 
   render() {
-    console.log("Here is process.env:")
-    console.log(process.env)
+    // console.log("Here is process.env:")
+    // console.log(process.env)
     return (
       <div className="App">
         {
@@ -113,7 +113,7 @@ export default class App extends Component {
           ?
           <React.Fragment>
             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
-            <RouteContainer />
+            <RouteContainer email={this.state.loggedInUserEmail}/>
             
           
           </React.Fragment>

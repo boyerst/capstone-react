@@ -16,6 +16,8 @@ export default class NewMarkerForm extends Component {
   }
 
 
+
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
@@ -25,6 +27,7 @@ export default class NewMarkerForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+
     this.props.createMarker(this.state) 
     this.setState({
       latitude:'',
@@ -106,7 +109,9 @@ export default class NewMarkerForm extends Component {
                 <Button 
                   type= "Submit" 
                   color="green" 
-                  onClick={this.handleClose}>
+                  onClick={this.handleClose}
+
+                  >
                     <Icon name='plus' />
                   Add Marker
                 </Button>

@@ -20,6 +20,7 @@ function MapRenderer(props) {
   const routes = props.routeToGet.marker
   console.log("Here are the props in MapRenderer from /markers/all:")
   console.log(props)
+
   console.log("Here is the routeToGet from MapRenderer:")
   console.log(props.routeToGet) 
 
@@ -33,6 +34,8 @@ function MapRenderer(props) {
     )
   })
 
+
+
   // const markers = props.markers.map(marker => {
   //   return (
   //    <Marker 
@@ -44,22 +47,29 @@ function MapRenderer(props) {
   //   )
   // }) 
 
+    return (
+      <Map 
+      style={mapStyles}
+      className= "map-style"
+      google={props.google} 
+      initialCenter={{lat: 42.9634, lng: -85.6681 }}
+      zoom={6}>
 
+        {markers}
+      </Map>
+    )
+  
 
+    // return(
+    //   <React.Fragment>
+    //   <InfoWindow>
+    //       marker={this.state.activeMarker}
+    //       visible={this.state.showingInfoWindow}
+    //       onClose={this.onClose}
+    //   </InfoWindow>
+    //   </React.Fragment>
 
-
-      return (
-        <Map 
-        style={mapStyles}
-        className= "map-style"
-        google={props.google} 
-        initialCenter={{lat: 42.9634, lng: -85.6681 }}
-        zoom={6}>
-
-          {markers}
-        </Map>
-      )
-
+    // 
 }
 
 

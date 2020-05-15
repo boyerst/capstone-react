@@ -16,7 +16,11 @@ export default class RouteContainer extends Component {
       routes: [],
       idOfRouteToEdit: -1,
       idOfRouteToGet: -1,
-      routeToGet: null
+      routeToGet: null,
+      loggedInUserEmail: null,
+      showButtons: false
+
+
     }
 
   }
@@ -24,8 +28,10 @@ export default class RouteContainer extends Component {
 
   componentDidMount() {
     // this.getAllRoutes()
-    this.getRoutes()
+    this.getAllRoutes()
   }
+
+
 
  
 
@@ -52,29 +58,29 @@ export default class RouteContainer extends Component {
 
 
 
-  // getAllRoutes = async () => {
-  //   try {
-  //     const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all/"
-  //     console.log("Trying to fetch data from:");
-  //     console.log(url);
-  //     const routesResponse = await fetch(url, {
-  //       credentials: 'include',
-  //       headers: {
-  //       'Content-Type': 'application/json'
-  //       },
-  //     })
-  //     console.log("Here is the Response from the fetch call:");
-  //     console.log(routesResponse);
-  //     const routesJson = await routesResponse.json()
-  //     console.log("Here is the data we got in getAllRoutes in RouteContainer:");
-  //     console.log(routesJson);
-  //     this.setState({
-  //       routes:routesJson.data
-  //     })
-  //   } catch(err) {
-  //     console.error("Error getting route data.", err)
-  //   }
-  // }
+  getAllRoutes = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      const routesResponse = await fetch(url, {
+        credentials: 'include',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routesResponse);
+      const routesJson = await routesResponse.json()
+      console.log("Here is the data we got in getAllRoutes in RouteContainer:");
+      console.log(routesJson);
+      this.setState({
+        routes:routesJson.data
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+    }
+  }
 
   getRoute = async (idOfRouteToGet) => {
     console.log("you are trying to get route with id: ", idOfRouteToGet)
@@ -209,6 +215,7 @@ export default class RouteContainer extends Component {
   render() {
     console.log("Here is this.state in render() in RouteContainer");
     console.log(this.state);
+    console.log(this.props.email)
 
     return(
       <React.Fragment>
@@ -222,10 +229,12 @@ export default class RouteContainer extends Component {
         ? //if true
         <RouteList 
           //this is always on the main page
+          email={this.props.email}
           routes={this.state.routes} 
           editRoute={this.editRoute}
           deleteRoute={this.deleteRoute}
           getRoute={this.getRoute}
+          showButtons={this.state.showButtons}
           />
         : //if not
         <div>
@@ -233,7 +242,7 @@ export default class RouteContainer extends Component {
         
        
           <MapContainer routeToGet={this.state.routeToGet} routes={this.state.routes} />
-         <a className="link" onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
+         <a className="link" onClick={event =>  window.location.href='/routes/all/'}>Back To All Routes</a>
         </div>
 
         }
