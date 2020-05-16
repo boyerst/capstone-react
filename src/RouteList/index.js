@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Item, Rating, Icon } from 'semantic-ui-react'
 import StackGrid from "react-stack-grid";
+import '../App.css'
 
 
 export default function RouteList(props) {
@@ -16,19 +17,22 @@ export default function RouteList(props) {
   const routes = props.routes.map(route => {
     return (
      <StackGrid 
+      className="routeList"
       key={route.id}
       columnWidth={850}
             // <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
       >
         <Item.Group relaxed>
           <Item>
-          <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src={route.images} alt={''} />
+          <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center'}} size='small' src={route.images} alt={''} />
             <Item.Content verticalAlign='middle'>
               <Item.Header>{route.location}</Item.Header>
         
                   <br/>
                   <br/>
-              <Rating icon="star" maxRating="5" rating={route.skill_level} disabled/>
+              <Item.Description style={{fontWeight: 'bold'}} align={'left'}>
+              Skill Level: <Rating icon="star" maxRating="5" rating={route.skill_level} disabled/>
+              </Item.Description>
               <Item.Description style={{marginRight: 130}} align="left">{route.comments}</Item.Description>
               <Item.Extra align="left">Length: {route.length}</Item.Extra>
               

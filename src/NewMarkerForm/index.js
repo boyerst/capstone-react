@@ -90,15 +90,7 @@ export default class NewMarkerForm extends Component {
                 value={this.state.longitude}
                 onChange={this.handleChange}
               />
-               <Form.Input
-                name="image"
-                type="text"
-                fluid icon="image"
-                iconPosition="left"
-                placeholder="Image"
-                value={this.state.image}
-                onChange={this.handleChange}
-              />
+        
               <Form.Input
                 name="description"
                 type="text"

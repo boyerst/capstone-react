@@ -56,11 +56,11 @@ export default class NewRouteForm extends Component {
       data.append('file', files[0])
       data.append('upload_preset', 'capstone')
       const url = 'https://api.cloudinary.com/v1_1/dkx5qb9go/image/upload'
-      const uploadImageResponse = await fetch(url, {
+      const uploadImageRes = await fetch(url, {
         method: 'POST',
         body: data
       })
-      const file = await uploadImageResponse.json()
+      const file = await uploadImageRes.json()
       console.log('file', file);
       console.log('file.secure_url', file.secure_url);
 
