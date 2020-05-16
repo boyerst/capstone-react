@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button, Icon, Segment, Header, Rating, Modal } from 'semantic-ui-react'
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
+
 
 export default class NewRouteForm extends Component {
   constructor(props) {
@@ -8,6 +10,7 @@ export default class NewRouteForm extends Component {
       location:'',
       length: '',                            
       skill_level: '',
+      images: '',
       comments: '',
       modalOpen: false
 
@@ -29,6 +32,7 @@ export default class NewRouteForm extends Component {
       location: '',
       length: '',
       skill_level: '',
+      images: '',
       comments: '',
       modalOpen: false
     })
@@ -40,10 +44,30 @@ export default class NewRouteForm extends Component {
     })
 
 
-  
+
 
 
   handleOpen = () => this.setState({ modalOpen: true })
+  
+
+  handleUpload = async (event) => {
+      const files = event.target.files
+      const data = new FormData()
+      data.append('file', files[0])
+      data.append('upload_preset', 'capstone')
+      const url = 'https://api.cloudinary.com/v1_1/dkx5qb9go/image/upload'
+      const uploadImageResponse = await fetch(url, {
+        method: 'POST',
+        body: data
+      })
+      const file = await uploadImageResponse.json()
+      console.log('file', file);
+      console.log('file.secure_url', file.secure_url);
+
+      this.setState({
+        images: file.secure_url
+      })
+  }
 
 
   render() {
@@ -79,6 +103,15 @@ export default class NewRouteForm extends Component {
                 placeholder="Length"
                 value={this.state.length}
                 onChange={this.handleChange}
+              />
+              <Form.Input
+                // name="images"
+                type="file"
+                fluid icon="image"
+                iconPosition="left"
+                // placeholder="Images"
+                // value={this.state.images}
+                onChange={this.handleUpload}
               />
               <Form.Input
                 name="comments"

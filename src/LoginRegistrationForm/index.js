@@ -41,9 +41,17 @@ export default class LoginRegisterForm extends Component {
 
   render() {
     return (
-      <Grid>
-        <Grid.Column>
-          <Segment>
+      <Grid className="login" columns={2}>
+        <Grid.Column 
+          style={{
+            top: 250,
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 450,
+            width: 390,
+            borderRadius: 90,
+          }}>
+          <Segment >
             <Form onSubmit={this.handleSubmit}>
               {this.state.action==="Register"
               &&
@@ -78,8 +86,8 @@ export default class LoginRegisterForm extends Component {
             {
               this.state.action==="Login"
               ?
-              <Message>
-              Need an account? <span className="link" onClick={this.changeForm}>Register</span>
+              <Message >
+              Need an account?  <span className="link" onClick={this.changeForm}>Register</span>
               </Message> 
               :
               <Message>

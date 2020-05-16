@@ -3,6 +3,7 @@ import RouteList from '../RouteList'
 import MapContainer from '../MapContainer'
 import NewRouteForm from '../NewRouteForm'
 import EditRouteForm from '../EditRouteForm'
+import AboutContainer from '../AboutContainer'
 import '../App.css'
 
 // import RouteShow from '../RouteShow'
@@ -222,6 +223,7 @@ export default class RouteContainer extends Component {
     console.log("Here is this.state in render() in RouteContainer");
     console.log(this.state);
     console.log(this.props.email)
+    console.log(this.props)
 
     return(
       <React.Fragment>
@@ -233,6 +235,7 @@ export default class RouteContainer extends Component {
         {
         this.state.idOfRouteToGet === -1
         ? //if true
+  
         <RouteList 
           //this is always on the main page
           email={this.props.email}
@@ -240,8 +243,11 @@ export default class RouteContainer extends Component {
           editRoute={this.editRoute}
           deleteRoute={this.deleteRoute}
           getRoute={this.getRoute}
+          routeToGet={this.state.routeToGet}
          
           />
+
+
         : //if not
         <div>
           
@@ -250,8 +256,7 @@ export default class RouteContainer extends Component {
           <MapContainer routeToGet={this.state.routeToGet} routes={this.state.routes} />
           <a className="link" onClick={this.returnToList}>Back To All Routes</a>
         </div>
-         // <a className="link" onClick={event =>  window.location.href='/routes/all/'}>Back To All Routes</a>
-
+         
         }
         {
           this.state.idOfRouteToEdit !== -1

@@ -32,10 +32,21 @@
   right: 0;
 }
 
+
 .newMarker {
+  display: flex;
+
   position: absolute;
   top: 0;
   right: 0;
+
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 /*  display: flex;*/
 /*  flex-direction: row;*/

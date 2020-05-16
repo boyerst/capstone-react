@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { Item } from 'semantic-ui-react'
+import { Item, Grid, Segment, Rail } from 'semantic-ui-react'
 import '../App.css';
 import RouteContainer from '../RouteContainer'
 
@@ -58,8 +58,26 @@ function MapRenderer(props) {
         {markers}
       </Map>
     )
-  
 
+    // return (
+    // <Segment>
+    // <Grid centered columns={3}>
+    //   <Grid.Column>
+    //     <Segment>
+     
+
+    //       <Rail dividing position='left'>
+    //         <Segment>Left Rail Content</Segment>
+    //       </Rail>
+
+    //       <Rail dividing position='right'>
+    //         <Segment>Right Rail Content</Segment>
+    //       </Rail>
+    //     </Segment>
+    //   </Grid.Column>
+    // </Grid>
+    // </Segment>
+    // )
     // return(
     //   <React.Fragment>
     //   <InfoWindow>

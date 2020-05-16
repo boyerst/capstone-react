@@ -106,6 +106,7 @@ export default class App extends Component {
   render() {
     // console.log("Here is process.env:")
     // console.log(process.env)
+    console.log(this.state)
     return (
       <div className="App">
         {

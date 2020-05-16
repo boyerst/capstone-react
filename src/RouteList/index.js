@@ -9,7 +9,8 @@ export default function RouteList(props) {
 
      // console.log(props.email)
      // console.log("here is props in RouteLkist")
-     // console.log(props)
+  console.log(props.routeToGet)
+  console.log(props)
 
 
   const routes = props.routes.map(route => {
@@ -17,19 +18,19 @@ export default function RouteList(props) {
      <StackGrid 
       key={route.id}
       columnWidth={850}
+            // <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
       >
         <Item.Group relaxed>
           <Item>
-            <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
+          <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src={route.images} alt={''} />
             <Item.Content verticalAlign='middle'>
               <Item.Header>{route.location}</Item.Header>
-              <Item.Header>{route.user_id.email}</Item.Header>
-              <Item.Header>{props.email}</Item.Header>
+        
                   <br/>
                   <br/>
               <Rating icon="star" maxRating="5" rating={route.skill_level} disabled/>
               <Item.Description style={{marginRight: 130}} align="left">{route.comments}</Item.Description>
-              <Item.Extra align="left">{route.length}</Item.Extra>
+              <Item.Extra align="left">Length: {route.length}</Item.Extra>
               
               { route.user_id.email == props.email &&
               
@@ -54,7 +55,7 @@ export default function RouteList(props) {
               </Button.Group>
              
               }
-              
+
               <Item.Extra>
                 <Button 
                   floated='right'

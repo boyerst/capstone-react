@@ -9,7 +9,8 @@ export default class EditRouteForm extends Component {
       location:props.routeToEdit.location,
       length: props.routeToEdit.length,                            
       skill_level: props.routeToEdit.skill_level,
-      comments: props.routeToEdit.comments
+      comments: props.routeToEdit.comments,
+      iamges: props.routeToEdit.images
     }
   }
 
@@ -64,6 +65,15 @@ render() {
                 placeholder="Length"
                 value={this.state.length}
                 onChange={this.handleChange}
+              />
+              <Form.Input
+                name="images"
+                type="file"
+                fluid icon="image"
+                iconPosition="left"
+                placeholder="Images"
+                value={this.state.images}
+                onChange={this.selectFileHandler}
               />
               <Form.Input
                 name="comments"

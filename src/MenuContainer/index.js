@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-
+import {Redirect, useHistory } from 'react-router-dom';
 
 
 
@@ -8,7 +8,8 @@ export default class MenuContainer extends Component {
   constructor(props) {
     super(props)
     this.state =  { 
-      activeItem: 'about'
+      activeItem: 'about',
+      loggedIn: true
     }
   }
 
@@ -17,10 +18,29 @@ export default class MenuContainer extends Component {
 handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 
 
+// routesPage = () => {
+//   return <Redirect to='/routes/all/'/>
+
+// }
+
+// routesPage = () => {
+//   getAllRoutes()
+
+// }
+  // window.location = 'api/v1/routes'
+
+onClick(){
+    window.location.href="/routes/all/";
+    this.setState({
+      loggedIn: true
+    })
+}
 
 render(props) {
+  console.log(this.props)
     const { activeItem } = this.state
     return (
+
       <Menu secondary>
         <Menu.Item>
         {this.props.email} 
@@ -33,7 +53,7 @@ render(props) {
         <Menu.Item
           name='routes'
           active={activeItem === 'routes'}
-          // onClick={ () => props.getRoutes(route.id) }
+          onClick={this.onClick}
         />
         <Menu.Item
           name='logout'
@@ -44,3 +64,14 @@ render(props) {
     )
   }
 }
+
+
+// function home(e) {
+//     e.preventDefault();
+//     window.location = 'my-app/src/Containers/HomePage.jsx';
+// }
+// routesPage => (event) = {
+//   event => window.location.href='/routes/all'
+// }
+
+// <a onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>

@@ -42,6 +42,11 @@ export default class NewMarkerForm extends Component {
   handleOpen = () => this.setState({ modalOpen: true })
 
 
+
+
+
+
+
   render() {
   return(
     <Modal 
