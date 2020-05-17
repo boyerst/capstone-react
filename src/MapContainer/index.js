@@ -6,7 +6,7 @@ import CurrentLocation from './Map.js';
 import NewMarkerForm from '../NewMarkerForm'
 import MapRenderer from '../MapRenderer'
 import '../App.css'
-import DeleteMarker from '../DeleteMarker'
+
 import EditMarkerForm from '../EditMarkerForm'
 
 // import RouteContainer from '../RouteContainer'
@@ -184,10 +184,12 @@ export class MapContainer extends Component {
           this.state.idOfMarkerToEdit !== -1
           &&
           <EditMarkerForm 
-            markerToEdit={this.state.markers.find((marker) => marker.id === this.state.idOfMarkerToEdit)}
+            markerToEdit={this.state.markers.find((marker) => marker.id === this.state.idOfMarkerToEdit.id)}
             idOfMarkerToEdit={this.state.idOfMarkerToEdit} 
             routeToGet={this.props.routeToGet} 
             updateMarker={this.updateMarker}
+            deleteMarker={this.deleteMarker}
+            idOfMarkerToDelete={this.idOfMarkerToDelete}
             markers={this.state.markers}/>
         }
       </React.Fragment>

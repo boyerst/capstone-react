@@ -12,7 +12,7 @@ export default function RouteList(props) {
      // console.log("here is props in RouteLkist")
   console.log(props.routeToGet)
   console.log(props)
-
+  
 
   const routes = props.routes.map(route => {
     return (

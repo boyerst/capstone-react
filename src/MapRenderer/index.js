@@ -99,6 +99,7 @@ function MapRenderer(props) {
   console.log(props.routeToGet) 
 
 
+
   // const markers_arr = 
   const markers = props.routeToGet.marker.map(marker => {
     return(

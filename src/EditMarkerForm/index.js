@@ -8,6 +8,10 @@ export default class EditMarkerForm extends Component {
     super(props)
     console.log(props.idOfMarkerToEdit)
     console.log(props)
+    console.log(props.idOfMarkerToEdit.id)
+    console.log(props.idOfMarkerToEdit)
+    console.log(props.markerToEdit)
+
     this.state = {
       // route_id: props.idOfMarkerToEdit.id,
       latitude: props.idOfMarkerToEdit.latitude,
@@ -36,9 +40,9 @@ export default class EditMarkerForm extends Component {
 
 
   render() {
-
+  console.log(this.props)
     return(
-      <Modal open={true} basic size="small" onClose={this.props.closeModal}>
+      <Modal   open={true} basic size="small" onClose={this.props.closeModal}>
         <Header>
           <h3>Enter Updated Information</h3>
         </Header>
@@ -78,6 +82,14 @@ export default class EditMarkerForm extends Component {
                     <Button 
                       type="Submit">
                       Update Marker
+                    </Button>
+                    <Button 
+                      icon="delete"
+                      color='red' 
+                      size="mini"
+                      inverted
+                      onClick={ () => this.props.deleteMarker(this.props.idOfMarkerToEdit.id) }
+                    >
                     </Button>
                     <Button 
                       color='grey' 
