@@ -72,7 +72,7 @@
 
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { Button, Icon, Modal, Header, Image } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Image, Grid } from 'semantic-ui-react'
 import '../App.css';
 import RouteContainer from '../RouteContainer'
 
@@ -95,18 +95,21 @@ function MapRenderer(props) {
   console.log("Here are the props in MapRenderer from /markers/all:")
   console.log(props)
 
-  console.log("Here is the routeToGet from MapRenderer:")
+  console.log("Here is the routeToGet from MapRenderer WHEN WE CLICK ON MARKER:")
   console.log(props.routeToGet) 
 
 
   // const markers_arr = 
   const markers = props.routeToGet.marker.map(marker => {
     return(
-   
-      <Marker key={marker.id}
-      position={{lat: marker.latitude, lng: marker.longitude}}
-      />
+    
+      <Marker 
+        onClick={ () => props.editMarker(marker)}
 
+        key={marker.id}
+        position={{lat: marker.latitude, lng: marker.longitude}}
+      />
+     
     )
   })
 
@@ -140,6 +143,7 @@ function MapRenderer(props) {
                 <Image wrapped size='large' style={{display: 'flex', alignItems: 'center'}} size='large' src={props.routeToGet.images} alt={''} />
               </Modal.Content>
           </Modal>
+          
         </div>
 
       </div>
@@ -148,6 +152,9 @@ function MapRenderer(props) {
 
     
 }
+
+
+
 
    //  <Container fluid>
 

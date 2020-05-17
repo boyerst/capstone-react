@@ -47,9 +47,10 @@ export default class NewMarkerForm extends Component {
 
 
 
-  render() {
+  render(props) {
   return(
     <Modal 
+    
     primary="true"
     className="createMarker"
     basic size= "large" 
@@ -112,6 +113,7 @@ export default class NewMarkerForm extends Component {
                     <Icon name='plus' />
                   Add Marker
                 </Button>
+          
                 &nbsp;
                 <Button 
                   color='grey' 

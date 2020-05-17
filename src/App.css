@@ -66,6 +66,16 @@
 
 }
 
+.button.ui.button.deleteMarker {
+  display: flex;
+  position: absolute;
+  top: 0;
+  color: red;
+  margin-top: 28px;
+  margin-left: 1596px;
+}
+
+
 .ui.button.gallery{
   display: flex;
   position: absolute;

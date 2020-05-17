@@ -6,6 +6,8 @@ import CurrentLocation from './Map.js';
 import NewMarkerForm from '../NewMarkerForm'
 import MapRenderer from '../MapRenderer'
 import '../App.css'
+import DeleteMarker from '../DeleteMarker'
+import EditMarkerForm from '../EditMarkerForm'
 
 // import RouteContainer from '../RouteContainer'
 // import { Form, Button, Segment, Modal, Header, Rating, Icon } from 'semantic-ui-react'
@@ -24,7 +26,8 @@ export class MapContainer extends Component {
       markers: [],
       showingInfoWindow: false,       // hides or the shows the infoWindow
       activeMarker: {},          //shows the active marker when clicked
-      selectedPlace: {}          //shows infoWindow fo selected place/ marker
+      selectedPlace: {}, 
+      idOfMarkerToEdit: -1          //shows infoWindow fo selected place/ marker
     };
   }
 
@@ -99,6 +102,67 @@ export class MapContainer extends Component {
     }
   }
 
+  editMarker = async (idOfMarkerToEdit) => {
+    console.log("Here is the Marker you are trying to edit:", idOfMarkerToEdit)
+    this.setState({
+      idOfMarkerToEdit: idOfMarkerToEdit
+    })
+  }
+
+
+
+  updateMarker = async (updatedMarkerInfo) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/" + this.state.idOfMarkerToEdit.id
+    try {
+      const updatedMarkerResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'PUT',
+        body: JSON.stringify(updatedMarkerInfo), 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      })
+      console.log("updatedMarkerResponse", updatedMarkerResponse)
+      const updatedMarkerJson = await updatedMarkerResponse.json()
+      console.log("updatedMarkerJson", updatedMarkerJson);
+      if(updatedMarkerResponse.status == 200) {
+        const markers = this.state.markers
+        const indexOfMarkerBeingUpdated = markers.findIndex(marker => marker.id == this.state.idOfMarkerToEdit.id)
+        markers[indexOfMarkerBeingUpdated] = updatedMarkerJson.data
+        this.setState({
+          markers: markers,
+          idOfMarkerToEdit: -1
+        })
+      }
+    } catch(error) {
+      console.error("There was an error updating the Marker")
+      console.error(error)
+    }
+  }
+
+
+
+
+  deleteMarker = async (idOfMarkerToDelete) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/" + idOfMarkerToDelete
+    try {
+    
+      const deleteMarkerResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'DELETE'
+      })
+      console.log("deleteMarkerResponse", deleteMarkerResponse)
+      const deleteMarkerJson = await deleteMarkerResponse.json()
+      console.log("deleteMarkerJson", deleteMarkerJson)
+      this.setState({
+        markers: this.state.markers.filter(marker => marker.id != idOfMarkerToDelete)
+      })
+
+    } catch (err) {
+      console.log("error deleting the marker")
+      console.log(err)
+    }
+  }
 
 
 
@@ -115,7 +179,17 @@ export class MapContainer extends Component {
       <React.Fragment>
 
         <NewMarkerForm createMarker={this.createMarker}/>
-        <MapRenderer  routeToGet={this.props.routeToGet} markers={this.state.markers}/>
+        <MapRenderer  editMarker={this.editMarker} routeToGet={this.props.routeToGet} markers={this.state.markers}/>
+        {
+          this.state.idOfMarkerToEdit !== -1
+          &&
+          <EditMarkerForm 
+            markerToEdit={this.state.markers.find((marker) => marker.id === this.state.idOfMarkerToEdit)}
+            idOfMarkerToEdit={this.state.idOfMarkerToEdit} 
+            routeToGet={this.props.routeToGet} 
+            updateMarker={this.updateMarker}
+            markers={this.state.markers}/>
+        }
       </React.Fragment>
     )
   }
@@ -123,6 +197,7 @@ export class MapContainer extends Component {
 
 export default MapContainer
 ////////////////////////////////////////////////////////////////////////////
+ 
 //   render() {
 //     console.log("Here is this.state from render() in MapContainer")
 //     console.log(this.state)
