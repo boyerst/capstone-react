@@ -101,45 +101,6 @@ export class MapContainer extends Component {
 
 
 
-  editMarker = async (idOfMarkerToEdit) => {
-    console.log("Here is the Marker you are trying to edit:", idOfMarkerToEdit)
-    this.setState({
-      idOfMarkerToEdit: idOfMarkerToEdit
-    })
-  }
-
-
-  
-  updateMarker = async (updatedMarkerInfo) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/" + this.state.idOfMarkerToEdit
-    try {
-      const updatedMarkerResponse = await fetch(url, {
-        credentials: 'include',
-        method: 'PUT',
-        body: JSON.stringify(updatedMarkerInfo), 
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      console.log("updatedMarkerResponse", updatedMarkerResponse)
-      const updatedMarkerJson = await updatedMarkerResponse.json()
-      console.log("updatedMarkerJson", updatedMarkerJson);
-      if(updatedMarkerResponse.status == 200) {
-        const markers = this.state.markers
-        const indexOfMarkerBeingUpdated = markers.findIndex(marker => marker.id == this.state.idOfMarkerToEdit)
-        markers[indexOfMarkerBeingUpdated] = updatedMarkerJson.data
-        this.setState({
-          markers: markers,
-          idOfMarkerToEdit: -1
-        })
-      }
-    } catch(error) {
-      console.error("There was an error updating the Marker")
-      console.error(error)
-    }
-
-
-  }
 
 
 
@@ -154,11 +115,7 @@ export class MapContainer extends Component {
       <React.Fragment>
 
         <NewMarkerForm createMarker={this.createMarker}/>
-        <MapRenderer  
-          routeToGet={this.props.routeToGet} 
-          deleteMarker={this.props.deleteMarker}
-          editMarker={this.props.editMarker}
-          />
+        <MapRenderer  routeToGet={this.props.routeToGet} markers={this.state.markers}/>
       </React.Fragment>
     )
   }

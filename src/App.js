@@ -3,7 +3,8 @@ import './App.css';
 import RouteContainer from './RouteContainer'
 import LoginRegistrationForm from './LoginRegistrationForm'
 import MenuContainer from './MenuContainer'
-
+import Footer from './Footer'
+import GalleryContainer from './GalleryContainer'
 
 
 
@@ -113,9 +114,11 @@ export default class App extends Component {
           this.state.loggedIn
           ?
           <React.Fragment>
+            <GalleryContainer />
             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
             <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>
-            
+            <Footer />
+
           
           </React.Fragment>
           :

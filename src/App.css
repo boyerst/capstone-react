@@ -21,8 +21,11 @@
 }
 
 .link {
-  position: absolute;
-  align-items: right;
+  
+  position: relative;
+  align-self: auto;
+  text-align: center;
+
 }
 
 .div.App {
@@ -36,7 +39,7 @@
 
 .title {
   font-family: "OstrichSansInline-Regular";
-  font-size: 250px;
+  font-size: 240px;
   padding-bottom: 30px;
 /*  vertical-align: top;*/
   margin-top: -130px;
@@ -49,7 +52,7 @@
   display: flex;
   position: absolute;
   top: 0;
-  margin-top: 70px;
+  margin-top: 110px;
   margin-left: 1595px;
 }
 
@@ -57,25 +60,33 @@
   display: flex;
   position: absolute;
   top: 0;
-  margin-top: 112px;
+  margin-top: 152px;
   margin-left: 1595px;
   width: 160px;
 
+}
+
+.ui.button.gallery{
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin-top: 68px;
+  margin-left: 1596px;
 }
 
 .button.ui.button.returnToList {
   display: flex;
   position: absolute;
   top: 0;
-  margin-top: 155px;
+  margin-top: 194px;
   margin-left: 1596px;
 }
 .button.ui.button.logout {
   display: flex;
   position: absolute;
   top: 0;
-  margin-top: 28px;
-  margin-left: 1599px;
+  margin-top: 26px;
+  margin-left: 1600px;
   
 }
 .button.ui.button.photoModal {
@@ -103,7 +114,10 @@
   color: black;
   background-color: black;
 }*/
-
+.pics{
+  padding: 15px;
+  align-content: center;
+}
 
 .imageThumbnail  {
   margin: 5px;
@@ -126,6 +140,9 @@
   border: 3px solid black;
 }
 
+.footer {
+  padding-bottom: 50px;
+}
 
 
 .mapDivP {
@@ -135,6 +152,5 @@
   padding: 19px;
 /*  align-self: auto;*/
 }
-
 
 

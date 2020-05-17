@@ -72,7 +72,7 @@
 
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { Button, Icon, Modal, Header } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Image } from 'semantic-ui-react'
 import '../App.css';
 import RouteContainer from '../RouteContainer'
 
@@ -136,8 +136,8 @@ function MapRenderer(props) {
             } 
           >
             <Header icon='motorcycle' content={props.routeToGet.location}  />
-              <Modal.Content>
-                <img style={{display: 'flex', alignItems: 'center'}} size='large' src={props.routeToGet.images} alt={''} />
+              <Modal.Content image>
+                <Image wrapped size='large' style={{display: 'flex', alignItems: 'center'}} size='large' src={props.routeToGet.images} alt={''} />
               </Modal.Content>
           </Modal>
         </div>

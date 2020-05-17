@@ -20,16 +20,18 @@ export default function RouteList(props) {
       style={{
         backgroundColor: "#FFD60B",
         marginLeft: 150,
-        marginRight: 100
+        marginRight: 100,
+
       }}
       className="routeList"
       key={route.id}
       columnWidth={1050}
+      paddingBottom={300}
            
       >
-        <Item.Group className="items" relaxed>
-          <Item>
-          <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center'}} size='small' src={route.images} alt={''} />
+        <Item.Group  className="items" relaxed>
+          <Item >
+          <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center'}} size='medium' src={route.images} alt={''} />
             <Item.Content verticalAlign='middle'>
               <Item.Header>{route.location}</Item.Header>
         

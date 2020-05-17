@@ -43,11 +43,11 @@ export default class LoginRegisterForm extends Component {
     return (
       <Grid className="login" 
         style={{  
-  backgroundImage: "url(" + "https://i.imgur.com/g0MN00E.png" + ")",
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat'
-}}>
+          backgroundImage: "url(" + "https://i.imgur.com/g0MN00E.png" + ")",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}>
         <Grid.Column 
           style={{
             top: 250,
@@ -57,7 +57,7 @@ export default class LoginRegisterForm extends Component {
             height: 1250,
             width: 390,
             borderRadius: 90,
-            
+
           }}>
           <Segment >
             <Form onSubmit={this.handleSubmit}>
@@ -85,7 +85,7 @@ export default class LoginRegisterForm extends Component {
                 value={this.state.password}
                 onChange={this.handleChange}
               />
-              <Button type= "Submit" color="grey" fluid size="large">
+              <Button positive  type= "Submit" fluid>
                 {this.state.action==="Login" ? "Log In": "Register"}
               </Button>
             </Form>
@@ -95,15 +95,16 @@ export default class LoginRegisterForm extends Component {
               this.state.action==="Login"
               ?
               <Message >
-              Need an account?  <span className="link" onClick={this.changeForm}>Register</span>
+              Need an account? <span className="link" onClick={this.changeForm}>Register</span>
               </Message> 
               :
-              <Message>
+              <Message >
               Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
               </Message>
             }
           </Message>
         </Grid.Column>
+
       </Grid>      
     )
   }
