@@ -1,16 +1,13 @@
 
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow, Style } from 'google-maps-react';
-import CurrentLocation from './Map.js';
-// import RouteShow from '../RouteShow'
 import NewMarkerForm from '../NewMarkerForm'
 import MapRenderer from '../MapRenderer'
 import '../App.css'
 
 import EditMarkerForm from '../EditMarkerForm'
 
-// import RouteContainer from '../RouteContainer'
-// import { Form, Button, Segment, Modal, Header, Rating, Icon } from 'semantic-ui-react'
+
 
 
 
@@ -20,21 +17,20 @@ export class MapContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-//add idOfRouteToGet here to pass down to MapRenderer?:
+
 
       position: [],
       markers: [],
       showingInfoWindow: false,       // hides or the shows the infoWindow
       activeMarker: {},          //shows the active marker when clicked
       selectedPlace: {}, 
-      idOfMarkerToEdit: -1          //shows infoWindow fo selected place/ marker
+      idOfMarkerToEdit: -1          
     };
   }
 
 
 
   componentDidMount() {
-    // get the markers when this component is first rendered
     this.getMarkers()
   }
 
@@ -199,53 +195,4 @@ export class MapContainer extends Component {
 }
 
 export default MapContainer
-////////////////////////////////////////////////////////////////////////////
- 
-//   render() {
-//     console.log("Here is this.state from render() in MapContainer")
-//     console.log(this.state)
-//         return (
-//       <React.Fragment>
-//         <h2>MapContainer: pass route data into here? Then can post route info and place markers on map from MapContainer?</h2>
-//         <p>Hello</p>
-//           <Map
-//             google={this.props.google}
-//             zoom={14}
-           
-            
-//           >
-//           <Marker
-//             position={{ lat: 41.8781, lng: -87.6298 }}
-//             onClick={this.onMarkerClick}
-//             name={'Plug in name props here'}
-//           />
-//           <InfoWindow
-//             marker={this.state.activeMarker}
-//             visible={this.state.showingInfoWindow}
-//             onClose={this.onClose}
-//           >
-//             <div>
-//               <h4>{this.state.selectedPlace.name}</h4>
-//             </div>
-//           </InfoWindow>
-//         </Map>
 
-
-//         <NewMarkersForm createMarker={this.createMarker}/>
-
-
-
-
-//       </React.Fragment>
-     
-
-    // );
-  // }
-// }
-
-
-// export default GoogleApiWrapper({
-//   apiKey: 'AIzaSyDjVYq-xdaiveartlS-yx7qMnZeVZogSI0'
-// })(MapContainer);
-
-/////////////////////////////////////////////////////////////////////////////////////////

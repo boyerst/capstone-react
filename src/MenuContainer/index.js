@@ -18,23 +18,8 @@ export default class MenuContainer extends Component {
 handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 
 
-// routesPage = () => {
-//   return <Redirect to='/routes/all/'/>
 
-// }
 
-// routesPage = () => {
-//   getAllRoutes()
-
-// }
-  // window.location = 'api/v1/routes'
-
-// onClick(){
-//     window.location.href="/routes/all/";
-//     this.setState({
-//       loggedIn: true
-//     })
-// }
 
 render(props) {
   console.log(this.props)
@@ -45,11 +30,6 @@ render(props) {
         <Menu.Item>
         {this.props.email} 
         </Menu.Item>
-        <Menu.Item
-          name='about'
-          active={activeItem === 'about'}
-          onClick={this.props.about}
-        />
 
 
         <Button name="logout" className="logout" onClick={this.props.logout}>Logout</Button>
@@ -59,12 +39,8 @@ render(props) {
 }
 
 
-// function home(e) {
-//     e.preventDefault();
-//     window.location = 'my-app/src/Containers/HomePage.jsx';
-// }
-// routesPage => (event) = {
-//   event => window.location.href='/routes/all'
-// }
-
-// <a onClick={event =>  window.location.href='/routes'}>Back To All Routes</a>
+        // <Menu.Item
+        //   name='about'
+        //   active={activeItem === 'about'}
+        //   onClick={this.props.about}
+        // />

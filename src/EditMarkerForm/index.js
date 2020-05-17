@@ -12,13 +12,17 @@ export default class EditMarkerForm extends Component {
     console.log(props.idOfMarkerToEdit)
     console.log(props.markerToEdit)
 
+
     this.state = {
       // route_id: props.idOfMarkerToEdit.id,
       latitude: props.idOfMarkerToEdit.latitude,
       longitude: props.idOfMarkerToEdit.longitude,                            
       description: props.idOfMarkerToEdit.description,
- 
+      idOfMarkerToEdit: props.idOfMarkerToEdit
+     
+     
     }
+ 
   }
 
 
@@ -35,16 +39,25 @@ export default class EditMarkerForm extends Component {
 
     }
 
+    closeModal = () => {
+      this.setState({
 
-
+      })
+    }
+    
 
 
   render() {
+    console.log(this.props.markerToEdit.id)
+    console.log(this.props.idOfMarkerToEdit.id)
   console.log(this.props)
   console.log(this.props.routeToGet.user_id.email)
   console.log(this.props.email)
     return(
-      <Modal   open={true} basic size="small" onClose={this.props.closeModal}>
+      <Modal   
+      open={true} basic size="small" onClose={this.props.closeModal}
+
+      >
         <Header>
           <h3>Enter Updated Information</h3>
         </Header>
@@ -81,7 +94,16 @@ export default class EditMarkerForm extends Component {
               />
                 <br/>
                   <Modal.Actions>
+
+                    <Button style={{float: 'right'}}
+                        color='grey'
+                        onClick={{open: false}}
+                       >
+                      <Icon name='undo' /> 
+                    </Button>
+
                   { this.props.routeToGet.user_id.email == this.props.email &&
+
                    <Button.Group style={{position: 'absolute', right: 0, top: 147}}>
                     <Button type="Submit">
                       Update Marker
@@ -100,10 +122,13 @@ export default class EditMarkerForm extends Component {
                       color='grey' 
                       onClick={this.handleClose}>
                         <Icon name='undo' /> 
-                      
                     </Button>
                     </Button.Group>
+                    
+                  
+                
                   }
+
                   </Modal.Actions>
               </Form>
             </Segment>
