@@ -17,12 +17,17 @@ export default function RouteList(props) {
   const routes = props.routes.map(route => {
     return (
      <StackGrid 
+      style={{
+        backgroundColor: "#FFD60B",
+        marginLeft: 150,
+        marginRight: 100
+      }}
       className="routeList"
       key={route.id}
-      columnWidth={850}
-            // <Item.Image style={{display: 'flex', alignItems: 'center'}}size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
+      columnWidth={1050}
+           
       >
-        <Item.Group relaxed>
+        <Item.Group className="items" relaxed>
           <Item>
           <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center'}} size='small' src={route.images} alt={''} />
             <Item.Content verticalAlign='middle'>
@@ -31,7 +36,7 @@ export default function RouteList(props) {
                   <br/>
                   <br/>
               <Item.Description style={{fontWeight: 'bold'}} align={'left'}>
-              Skill Level: <Rating icon="star" maxRating="5" rating={route.skill_level} disabled/>
+              Skill Level: <Rating maxRating="5" rating={route.skill_level} disabled/>
               </Item.Description>
               <Item.Description style={{marginRight: 130}} align="left">{route.comments}</Item.Description>
               <Item.Extra align="left">Length: {route.length}</Item.Extra>

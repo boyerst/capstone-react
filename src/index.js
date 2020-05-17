@@ -4,6 +4,8 @@ import './index.css';
 import 'semantic-ui-css/semantic.min.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './style/fonts/OstrichSansInline-Regular.otf'
+
 
 ReactDOM.render(
     <App />,

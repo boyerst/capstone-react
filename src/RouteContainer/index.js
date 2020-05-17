@@ -7,7 +7,7 @@ import AboutContainer from '../AboutContainer'
 import '../App.css'
 
 // import RouteShow from '../RouteShow'
-import { Link } from 'semantic-ui-react'
+import { Link, Button } from 'semantic-ui-react'
 
 export default class RouteContainer extends Component {
 
@@ -19,6 +19,7 @@ export default class RouteContainer extends Component {
       idOfRouteToGet: -1,
       routeToGet: null,
       loggedInUserEmail: null,
+ 
    
 
 
@@ -38,7 +39,7 @@ export default class RouteContainer extends Component {
     })
   }
 
-
+  
  
 
   getRoutes = async () => {
@@ -227,7 +228,8 @@ export default class RouteContainer extends Component {
 
     return(
       <React.Fragment>
-        <h2>WMATracks</h2>
+        <h2 className="title">W.M.A.T. Tracks</h2>
+     
         <NewRouteForm 
           createRoute={this.createRoute}
           //this is on the main page: it opens as a modal
@@ -253,8 +255,9 @@ export default class RouteContainer extends Component {
           
         
        
-          <MapContainer routeToGet={this.state.routeToGet} routes={this.state.routes} />
-          <a className="link" onClick={this.returnToList}>Back To All Routes</a>
+          <MapContainer className="mapCont" routeToGet={this.state.routeToGet} routes={this.state.routes} />
+          <Button className="returnToList" onClick={this.returnToList}>Return To List </Button>
+
         </div>
          
         }
@@ -280,4 +283,5 @@ export default class RouteContainer extends Component {
   
 }
 
+          
 

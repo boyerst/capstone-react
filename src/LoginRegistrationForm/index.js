@@ -41,15 +41,23 @@ export default class LoginRegisterForm extends Component {
 
   render() {
     return (
-      <Grid className="login" columns={2}>
+      <Grid className="login" 
+        style={{  
+  backgroundImage: "url(" + "https://i.imgur.com/g0MN00E.png" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'
+}}>
         <Grid.Column 
           style={{
             top: 250,
+            left: 300,
             alignItems: 'center',
             justifyContent: 'center',
-            height: 450,
+            height: 1250,
             width: 390,
             borderRadius: 90,
+            
           }}>
           <Segment >
             <Form onSubmit={this.handleSubmit}>

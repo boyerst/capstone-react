@@ -78,13 +78,14 @@ import RouteContainer from '../RouteContainer'
 
 
 
-const mapStyles = 
-   {
-    top: 100,
-    left: 70,
-    width: '60%',
-    height: '75%'
-  }
+// const mapStyles = 
+//    {
+//     top: 100,
+//     left: 70,
+//     width: '60%',
+//     height: '75%',
+
+//   }
 
 
 
@@ -117,8 +118,8 @@ function MapRenderer(props) {
       <div>
 
         <Map 
-          style={mapStyles}
-          className= "map-style"
+          // style={mapStyles}
+          className= "mapStyle"
           google={props.google} 
           initialCenter={{lat: 43.7817, lng: -86.4331 }}
           zoom={7}>

@@ -1,12 +1,23 @@
 .App {
   text-align: center;
+  background-color:#FFD60B;
+
 }
 
-.routeList {
+
+#FFD60B
+
+.items {
   display: flex;
-  margin-right: 400px;
-  margin-left: 200px;
-  background-color: grey;
+  background-color: #FFD60B;
+  margin-top: -20;
+
+
+}
+.div.routeList {
+  display: flex;
+  position: absolute;
+ 
 }
 
 .link {
@@ -14,31 +25,84 @@
   align-items: right;
 }
 
-
-.button.ui.button.new-route {
-  position: absolute;
-  top: 0;
-  
+.div.App {
+  background-color: #FFD60B;
 }
 
+
+/*.fragment {
+  background-color: yellow;
+}*/
+
+.title {
+  font-family: "OstrichSansInline-Regular";
+  font-size: 250px;
+  padding-bottom: 30px;
+/*  vertical-align: top;*/
+  margin-top: -130px;
+  background-color: #FFD60B;
+
+
+}
+
+.button.ui.button.new-route {
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin-top: 70px;
+  margin-left: 1595px;
+}
 
 .button.ui.button.newMarker {
   display: flex;
   position: absolute;
   top: 0;
-  margin-left: 1000px;
-  margin-top: 150px;
+  margin-top: 112px;
+  margin-left: 1595px;
+  width: 160px;
 
 }
+
+.button.ui.button.returnToList {
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin-top: 155px;
+  margin-left: 1596px;
+}
+.button.ui.button.logout {
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin-top: 28px;
+  margin-left: 1599px;
+  
+}
+.button.ui.button.photoModal {
+  /*display: inline-flex;*/
+  display: inline-block;
+  align-content: center;
+  padding: 15px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 50%;
+}
+
 
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
 
+
 }
 
-
+/*.div.mapStyle {
+  color: black;
+  background-color: black;
+}*/
 
 
 .imageThumbnail  {
@@ -53,9 +117,9 @@
 
 .mapDiv {
 /*  display: flex;*/
-  
+  background-color: white;
   position: absolute;
-  top: 275px;
+  top: 330px;
   right: 170px;
   width: 350px;
   height: 400px;
@@ -63,41 +127,14 @@
 }
 
 
+
 .mapDivP {
 /*  display: flex;*/
+
   /*text-align: left;*/
-  padding: 15px;
+  padding: 19px;
 /*  align-self: auto;*/
 }
-.button.ui.button.photoModal {
-  /*display: inline-flex;*/
-  display: inline-block;
-  align-content: center;
-  padding: 15px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  margin-top: 30px;
-  margin-left: 30px;
-  width: 50%;
- /* justify-content: flex-end;*/
-/*  align-self: bottom;*/
 
 
-}
-/*  display: flex;*/
-/*  flex-direction: row;*/
-/*  justify-content: flex-start;*/
 
-/*  position: relative-right;
-  align-items: flex-end;
-  align-self: flex-end;*/
-
-/*.map {
-  display: flex;
-  margin-top: 500px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-content: center;
-  align-items: center;
-}*/

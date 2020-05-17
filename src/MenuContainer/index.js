@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Button } from 'semantic-ui-react'
 import {Redirect, useHistory } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ export default class MenuContainer extends Component {
   constructor(props) {
     super(props)
     this.state =  { 
-      activeItem: 'about',
+      activeItem: 'logout',
       loggedIn: true
     }
   }
@@ -29,12 +29,12 @@ handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 // }
   // window.location = 'api/v1/routes'
 
-onClick(){
-    window.location.href="/routes/all/";
-    this.setState({
-      loggedIn: true
-    })
-}
+// onClick(){
+//     window.location.href="/routes/all/";
+//     this.setState({
+//       loggedIn: true
+//     })
+// }
 
 render(props) {
   console.log(this.props)
@@ -50,16 +50,9 @@ render(props) {
           active={activeItem === 'about'}
           onClick={this.props.about}
         />
-        <Menu.Item
-          name='routes'
-          active={activeItem === 'routes'}
-          onClick={this.onClick}
-        />
-        <Menu.Item
-          name='logout'
-          active={activeItem === 'logout'}
-          onClick={this.props.logout}
-        />
+
+
+        <Button name="logout" className="logout" onClick={this.props.logout}>Logout</Button>
       </Menu>
     )
   }

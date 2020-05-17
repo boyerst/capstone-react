@@ -114,7 +114,7 @@ export default class App extends Component {
           ?
           <React.Fragment>
             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
-            <RouteContainer email={this.state.loggedInUserEmail}/>
+            <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>
             
           
           </React.Fragment>
