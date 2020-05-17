@@ -56,7 +56,7 @@ export default class EditRouteForm extends Component {
 
   render() {
     return(
-      <Modal open={true} basic size="small" onClose={this.props.closeModal}>
+      <Modal open={true} basic size="medium" onClose={this.props.closeModal}>
         <Header>
           <h3>Enter Updated Information</h3>
         </Header>

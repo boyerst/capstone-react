@@ -125,7 +125,7 @@ function MapRenderer(props) {
           // style={mapStyles}
           className= "mapStyle"
           google={props.google} 
-          initialCenter={{lat: 43.7817, lng: -86.4331 }}
+          initialCenter={{lat: 42.4031, lng: -86.2736 }}
           zoom={7}>
             {markers}
         </Map>

@@ -41,6 +41,8 @@ export default class EditMarkerForm extends Component {
 
   render() {
   console.log(this.props)
+  console.log(this.props.routeToGet.user_id.email)
+  console.log(this.props.email)
     return(
       <Modal   open={true} basic size="small" onClose={this.props.closeModal}>
         <Header>
@@ -79,10 +81,12 @@ export default class EditMarkerForm extends Component {
               />
                 <br/>
                   <Modal.Actions>
-                    <Button 
-                      type="Submit">
+                  { this.props.routeToGet.user_id.email == this.props.email &&
+                   <Button.Group style={{position: 'absolute', right: 0, top: 147}}>
+                    <Button type="Submit">
                       Update Marker
                     </Button>
+                    <Button.Or />
                     <Button 
                       icon="delete"
                       color='red' 
@@ -91,12 +95,15 @@ export default class EditMarkerForm extends Component {
                       onClick={ () => this.props.deleteMarker(this.props.idOfMarkerToEdit.id) }
                     >
                     </Button>
+                    <Button.Or />
                     <Button 
                       color='grey' 
                       onClick={this.handleClose}>
                         <Icon name='undo' /> 
-                      Go Back
+                      
                     </Button>
+                    </Button.Group>
+                  }
                   </Modal.Actions>
               </Form>
             </Segment>

@@ -169,7 +169,7 @@ export class MapContainer extends Component {
 
 
   render() {
-
+    console.log(this.props.email)
     console.log("Here is this.state from render() in MapContainer")
     console.log(this.state)
 
@@ -184,6 +184,7 @@ export class MapContainer extends Component {
           this.state.idOfMarkerToEdit !== -1
           &&
           <EditMarkerForm 
+            email={this.props.email}
             markerToEdit={this.state.markers.find((marker) => marker.id === this.state.idOfMarkerToEdit.id)}
             idOfMarkerToEdit={this.state.idOfMarkerToEdit} 
             routeToGet={this.props.routeToGet} 

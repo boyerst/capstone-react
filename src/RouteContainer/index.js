@@ -255,7 +255,7 @@ export default class RouteContainer extends Component {
           
         
        
-          <MapContainer className="mapCont" routeToGet={this.state.routeToGet} routes={this.state.routes} />
+          <MapContainer email={this.props.email} className="mapCont" routeToGet={this.state.routeToGet} routes={this.state.routes} />
           <Button className="returnToList" onClick={this.returnToList}>Return To List </Button>
 
         </div>
