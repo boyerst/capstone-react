@@ -39,14 +39,14 @@
 
 
 #### Wireframes
-[Imgur](https://i.imgur.com/v4HfDyH.png)
-[Imgur](https://i.imgur.com/BvMEkkb.png)
-[Imgur](https://i.imgur.com/zHZzAwM.png)
-[Imgur](https://i.imgur.com/pArQWIg.png)
-[Imgur](https://i.imgur.com/teh6axH.png)
-[Imgur](https://i.imgur.com/TdqiLV0.png)
-[Imgur](https://i.imgur.com/FXaPK8y.png)
+![Wireframe](https://i.imgur.com/v4HfDyH.png)
+![Wireframe](https://i.imgur.com/BvMEkkb.png)
+![Wireframe](https://i.imgur.com/zHZzAwM.png)
+![Wireframe](https://i.imgur.com/pArQWIg.png)
+![Wireframe](https://i.imgur.com/teh6axH.png)
+![Wireframe](https://i.imgur.com/TdqiLV0.png)
+![Wireframe](https://i.imgur.com/FXaPK8y.png)
 
 
-AIzaSyDjVYq-xdaiveartlS-yx7qMnZeVZogSI0
+
 
