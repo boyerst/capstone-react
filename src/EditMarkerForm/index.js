@@ -106,56 +106,49 @@ export default class EditMarkerForm extends Component {
               />
                 <br/>
                   <Modal.Actions>
-
-                  
-
                   { 
-                    this.props.routeToGet.user_id.email == this.props.email ?
+                    this.props.routeToGet.user_id.email == this.props.email &&
 
                    <Button.Group style={{position: 'absolute', right: 0, top: 147}}>
                     <Button type="Submit">
                       Update Marker
                     </Button>
-                    <Button.Or />
-                    <Button 
-                      icon="delete"
-                      color='red' 
-                      size="mini"
-                      inverted
-                      onClick={ () => this.props.deleteMarker(this.props.idOfMarkerToEdit.id) }
-                    >
-                    </Button>
-                    <Button.Or />
-                    <Button 
-                      color='grey' 
-                      onClick={this.handleClose}>
-                        <Icon name='undo' /> 
-                    </Button>
+                      <Button.Or />
+                        <Button 
+                          icon="delete"
+                          color='red' 
+                          size="mini"
+                          inverted
+                          onClick={ () => this.props.deleteMarker(this.props.idOfMarkerToEdit.id) }
+                        >
+                        </Button>
+                      <Button.Or />
+                        <Button 
+                          color='grey' 
+                          onClick={this.handleClose}>
+                            <Icon name='undo' /> 
+                        </Button>
+                      <Button.Or />
+                        <Button 
+                          style={{float: 'right'}}
+                          color='grey'
+                          onClick={this.closeModal}
+                        >
+                          <Icon name='undo' /> 
+                        </Button>
                     </Button.Group>
-                    
-                    :
-
-                    <Button 
-                      style={{float: 'right'}}
-                      color='grey'
-                      onClick={this.closeModal}
-                    >
-                      <Icon name='undo' /> 
-                    </Button>
-        
                   }
-
                   </Modal.Actions>
               </Form>
               {
                 this.props.routeToGet.user_id.email !== this.props.email &&
                 <Button 
-                  style={{float: 'right'}}
+                  style={{position: 'absolute', right: 10, top: 162}}
                   color='grey'
                   onClick={this.handleClose}
                 >
                     <Icon name='undo' /> 
-                  </Button>
+                </Button>
               }
             </Segment>
             </Modal.Description>
