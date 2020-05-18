@@ -56,7 +56,7 @@ export default class EditRouteForm extends Component {
 
   render() {
     return(
-      <Modal open={true} basic size="medium" onClose={this.props.closeModal}>
+      <Modal open={true} basic size="large" onClose={this.props.closeModal}>
         <Header>
           <h3>Enter Updated Information</h3>
         </Header>
@@ -113,7 +113,7 @@ export default class EditRouteForm extends Component {
                     icon="star" 
                     maxRating={5} 
                     onRate={this.handleRate} 
-                    defaultRating={0} 
+                    // defaultRating={0} 
                   />
                 </Form.Input>
                 <br/>
@@ -123,7 +123,6 @@ export default class EditRouteForm extends Component {
                       Update Route
                     </Button>
                     <Button 
-                      color='grey' 
                       onClick={this.handleClose}>
                         <Icon name='undo' /> 
                       Go Back

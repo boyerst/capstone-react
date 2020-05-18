@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker, InfoWindow, Style } from 'google-maps-react';
+// import { Map, GoogleApiWrapper, Marker, InfoWindow, Style } from 'google-maps-react';
 import NewMarkerForm from '../NewMarkerForm'
 import MapRenderer from '../MapRenderer'
 import '../App.css'
@@ -17,7 +17,6 @@ export class MapContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
 
       position: [],
       markers: [],
