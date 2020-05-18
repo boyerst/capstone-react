@@ -18,7 +18,7 @@ export default class EditMarkerForm extends Component {
       latitude: props.idOfMarkerToEdit.latitude,
       longitude: props.idOfMarkerToEdit.longitude,                            
       description: props.idOfMarkerToEdit.description,
-      idOfMarkerToEdit: props.idOfMarkerToEdit
+      idOfMarkerToEdit: -1
      
      
     }
@@ -36,32 +36,44 @@ export default class EditMarkerForm extends Component {
     handleSubmit = (event) => {
       event.preventDefault()
       this.props.updateMarker(this.state)
-
-    }
-
-    closeModal = () => {
       this.setState({
-
+        idOfMarkerToEdit: -1
       })
-    }
-    
 
+    }
+
+    handleClose = () => {
+      this.props.closeModal(this.state)
+      }
+      //pout htis in parent, set state in parent OR
+      // switch modal to fucntiona nd sue handClose as prop and pass edit/update as props
+      // maybe send handle submit as props.
+    
+    
+  //   onKeyDown = event => {
+  //   if (event.keyCode === 27) {
+  //     this.closeModal();
+  //   }
+  // };
 
   render() {
     console.log(this.props.markerToEdit.id)
     console.log(this.props.idOfMarkerToEdit.id)
-  console.log(this.props)
-  console.log(this.props.routeToGet.user_id.email)
-  console.log(this.props.email)
+    console.log(this.props)
+    console.log(this.props.routeToGet.user_id.email)
+    console.log(this.props.email)
+
     return(
       <Modal   
       open={true} basic size="small" onClose={this.props.closeModal}
+      
 
       >
         <Header>
           <h3>Enter Updated Information</h3>
         </Header>
-          <Modal.Content>
+          <Modal.Content onKeyDown={this.onKeyDown}>
+          <Modal.Description>
             <Segment>
               <Form onSubmit={this.handleSubmit}>
                
@@ -95,14 +107,10 @@ export default class EditMarkerForm extends Component {
                 <br/>
                   <Modal.Actions>
 
-                    <Button style={{float: 'right'}}
-                        color='grey'
-                        onClick={{open: false}}
-                       >
-                      <Icon name='undo' /> 
-                    </Button>
+                  
 
-                  { this.props.routeToGet.user_id.email == this.props.email &&
+                  { 
+                    this.props.routeToGet.user_id.email == this.props.email ?
 
                    <Button.Group style={{position: 'absolute', right: 0, top: 147}}>
                     <Button type="Submit">
@@ -125,13 +133,32 @@ export default class EditMarkerForm extends Component {
                     </Button>
                     </Button.Group>
                     
-                  
-                
+                    :
+
+                    <Button 
+                      style={{float: 'right'}}
+                      color='grey'
+                      onClick={this.closeModal}
+                    >
+                      <Icon name='undo' /> 
+                    </Button>
+        
                   }
 
                   </Modal.Actions>
               </Form>
+              {
+                this.props.routeToGet.user_id.email !== this.props.email &&
+                <Button 
+                  style={{float: 'right'}}
+                  color='grey'
+                  onClick={this.handleClose}
+                >
+                    <Icon name='undo' /> 
+                  </Button>
+              }
             </Segment>
+            </Modal.Description>
           </Modal.Content>
       </Modal>
       );

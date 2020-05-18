@@ -161,7 +161,11 @@ export class MapContainer extends Component {
   }
 
 
-
+    closeModal = () => {
+    this.setState({
+      idOfMarkerToEdit: -1
+    })
+  }
 
 
   render() {
@@ -175,12 +179,13 @@ export class MapContainer extends Component {
       <React.Fragment>
 
         <NewMarkerForm createMarker={this.createMarker}/>
-        <MapRenderer  editMarker={this.editMarker} routeToGet={this.props.routeToGet} markers={this.state.markers}/>
+        <MapRenderer editMarker={this.editMarker} routeToGet={this.props.routeToGet} markers={this.state.markers}/>
         {
           this.state.idOfMarkerToEdit !== -1
           &&
           <EditMarkerForm 
             email={this.props.email}
+            closeModal={this.closeModal}
             markerToEdit={this.state.markers.find((marker) => marker.id === this.state.idOfMarkerToEdit.id)}
             idOfMarkerToEdit={this.state.idOfMarkerToEdit} 
             routeToGet={this.props.routeToGet} 
