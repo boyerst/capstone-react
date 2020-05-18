@@ -152,13 +152,14 @@
 
 .footer {
   padding-bottom: 50px;
+  padding-top: 350px;
 }
 
 
 .mapDivP {
 /*  display: flex;*/
 
-  /*text-align: left;*/
+  text-align: left;
   padding: 19px;
 /*  align-self: auto;*/
 }

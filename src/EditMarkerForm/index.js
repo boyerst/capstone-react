@@ -45,16 +45,8 @@ export default class EditMarkerForm extends Component {
     handleClose = () => {
       this.props.closeModal(this.state)
       }
-      //pout htis in parent, set state in parent OR
-      // switch modal to fucntiona nd sue handClose as prop and pass edit/update as props
-      // maybe send handle submit as props.
-    
-    
-  //   onKeyDown = event => {
-  //   if (event.keyCode === 27) {
-  //     this.closeModal();
-  //   }
-  // };
+     
+
 
   render() {
     console.log(this.props.markerToEdit.id)
@@ -72,7 +64,7 @@ export default class EditMarkerForm extends Component {
         <Header>
           <h3>Enter Updated Information</h3>
         </Header>
-          <Modal.Content onKeyDown={this.onKeyDown}>
+          <Modal.Content >
           <Modal.Description>
             <Segment>
               <Form onSubmit={this.handleSubmit}>
@@ -128,14 +120,7 @@ export default class EditMarkerForm extends Component {
                           onClick={this.handleClose}>
                             <Icon name='undo' /> 
                         </Button>
-                      <Button.Or />
-                        <Button 
-                          style={{float: 'right'}}
-                          color='grey'
-                          onClick={this.closeModal}
-                        >
-                          <Icon name='undo' /> 
-                        </Button>
+                   
                     </Button.Group>
                   }
                   </Modal.Actions>

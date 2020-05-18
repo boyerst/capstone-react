@@ -139,7 +139,7 @@ export class MapContainer extends Component {
 
 
   deleteMarker = async (idOfMarkerToDelete) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/" + idOfMarkerToDelete
+    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/" + idOfMarkerToDelete.id
     try {
     
       const deleteMarkerResponse = await fetch(url, {
@@ -160,7 +160,9 @@ export class MapContainer extends Component {
   }
 
 
-    closeModal = () => {
+
+
+  closeModal = () => {
     this.setState({
       idOfMarkerToEdit: -1
     })

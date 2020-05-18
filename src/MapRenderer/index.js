@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { Button, Icon, Modal, Header, Image } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Image, Rating } from 'semantic-ui-react'
 import '../App.css';
 
 
@@ -30,7 +30,7 @@ function MapRenderer(props) {
   })
 
 
-
+//in regards to the &nbsp; --> condition so that only one space depending on lenght of comment
 
     return(
    
@@ -46,7 +46,14 @@ function MapRenderer(props) {
         </Map>
             
         <div className="mapDiv">
-          <p className="mapDivP">{props.routeToGet.comments}</p>
+          <p className="mapDivP" style={{fontWeight: 'bold'}}>
+          <h2>ABOUT</h2> 
+          <h4>{props.routeToGet.location}</h4>
+          Skill Level: <Rating maxRating="5" rating={props.routeToGet.skill_level} disabled/>
+          &ntsb;
+          <li>{props.routeToGet.comments}</li>
+          <li>{props.routeToGet.length}</li>
+          </p>
           <Modal basic size='large'
             trigger={
             <Button className="photoModal"
