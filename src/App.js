@@ -19,6 +19,10 @@ export default class App extends Component {
 
   }
   
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
+  router.route('*') .get((req, res) => { res.sendFile(path.join(__dirname+'/client/build/index.html')); });
+
 
   register = async (registrationInfo) => {
     console.log("Here is the lifted registration data:", registrationInfo);
