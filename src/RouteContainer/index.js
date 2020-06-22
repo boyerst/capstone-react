@@ -72,9 +72,9 @@ export default class RouteContainer extends Component {
       console.log(url);
       const routesResponse = await fetch(url, {
         credentials: 'include',
-        // headers: {
-        //   'Content-Type': 'application/json'
-        // },
+        headers: {
+          'Content-Type': 'application/json'
+        },
       })
       console.log("Here is the Response from the fetch call:");
       console.log(routesResponse);
