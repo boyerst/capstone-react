@@ -63,8 +63,6 @@ export default class RouteContainer extends Component {
     }
   }
 
-
-
   getAllRoutes = async () => {
     try {
       const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
@@ -89,6 +87,8 @@ export default class RouteContainer extends Component {
       console.error("Error getting route data.", err)
     }
   }
+
+
 
   getRoute = async (idOfRouteToGet) => {
     console.log("you are trying to get route with id: ", idOfRouteToGet)
