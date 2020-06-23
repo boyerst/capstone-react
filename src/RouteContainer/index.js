@@ -65,7 +65,7 @@ export default class RouteContainer extends Component {
 
   getAllRoutes = async () => {
     try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all/"
       console.log("Trying to fetch data from:");
       console.log(url);
       const routesResponse = await fetch (url, {
