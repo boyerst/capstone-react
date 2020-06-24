@@ -75,7 +75,7 @@ export default class RouteContainer extends Component {
         //   'Accept' : 'application/json',
         
           // 'Authorization' : 'Bearer e1e8256e-c41f-4d7a-9f5c-4bc97fb2c6d9'
-        },
+        // },
       })
       console.log("Here is the Response from the fetch call:");
       console.log(routesResponse);
