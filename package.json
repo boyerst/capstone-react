@@ -1,6 +1,6 @@
 {
   "name": "capstone-react",
-  "homepage": "https://wmat-tracks.herokuapp.com/",
+  "homepage": "https://wmattracks.herokuapp.com/api/v1/routes/all",
   "version": "0.1.0",
   "engines": {
     "node": "12.18.1",
