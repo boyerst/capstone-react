@@ -68,12 +68,13 @@ export default class RouteContainer extends Component {
       const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all/"
       console.log("Trying to fetch data from:");
       console.log(url);
-      const routesResponse = await fetch (url, {
-        credentials: 'include',
+      const routesResponse = await fetch url
+      // (url, {
+        // credentials: 'include',
         // headers: {
         //   'Content-Type': 'application/json'
         // },
-      })
+      // })
       console.log("Here is the Response from the fetch call:");
       console.log(routesResponse);
       const routesJson = await routesResponse.json()
