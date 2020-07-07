@@ -154,8 +154,8 @@ export class MapContainer extends Component {
       })
 
     } catch (err) {
-      console.log("error deleting the marker")
-      console.log(err)
+      // console.log("error deleting the marker")
+      // console.log(err)
     }
   }
 
