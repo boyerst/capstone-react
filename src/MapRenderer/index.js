@@ -50,9 +50,9 @@ function MapRenderer(props) {
           <h2>ABOUT</h2> 
           <h4>{props.routeToGet.location}</h4>
           Skill Level: <Rating maxRating="5" rating={props.routeToGet.skill_level} disabled/>
-          &ntsb;
-          <li>{props.routeToGet.comments}</li>
-          <li>{props.routeToGet.length}</li>
+          
+          <h5>{props.routeToGet.comments}</h5>
+          <h5>{props.routeToGet.length} miles</h5>
           </p>
           <Modal basic size='large'
             trigger={
