@@ -45,6 +45,27 @@ export class MapContainer extends Component {
     }
   };
 
+  deleteMarker = async (idOfMarkerToDelete) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/" + idOfMarkerToDelete
+    try {
+    
+      const deleteMarkerResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'DELETE'
+      })
+      console.log("deleteMarkerResponse", deleteMarkerResponse)
+      const deleteMarkerJson = await deleteMarkerResponse.json()
+      console.log("deleteMarkerJson", deleteMarkerJson)
+      this.setState({
+        markers: this.state.markers.filter(marker => marker.id != idOfMarkerToDelete)
+      })
+
+    } catch (err) {
+      console.log("error deleting the marker")
+      console.log(err)
+    }
+  }
+  
   getMarkers = async () => {
     try {
       const url = process.env.REACT_APP_API_URL + "/api/v1/markers/all"
@@ -138,26 +159,6 @@ export class MapContainer extends Component {
 
 
 
-  deleteMarker = async (idOfMarkerToDelete) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/markers/" + idOfMarkerToDelete
-    try {
-    
-      const deleteMarkerResponse = await fetch(url, {
-        credentials: 'include',
-        method: 'DELETE'
-      })
-      console.log("deleteMarkerResponse", deleteMarkerResponse)
-      const deleteMarkerJson = await deleteMarkerResponse.json()
-      console.log("deleteMarkerJson", deleteMarkerJson)
-      this.setState({
-        markers: this.state.markers.filter(marker => marker.id != idOfMarkerToDelete)
-      })
-
-    } catch (err) {
-      // console.log("error deleting the marker")
-      // console.log(err)
-    }
-  }
 
 
 
