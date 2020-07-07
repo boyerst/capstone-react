@@ -233,6 +233,7 @@ export default class RouteContainer extends Component {
     console.log(this.state);
     console.log(this.props.email)
     console.log(this.props)
+    
 
     return(
       <React.Fragment>

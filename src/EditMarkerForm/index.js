@@ -49,7 +49,7 @@ export default class EditMarkerForm extends Component {
 
 
   render() {
-    console.log(this.props.markerToEdit.id)
+    // console.log(this.props.markerToEdit.id)
     console.log(this.props.idOfMarkerToEdit.id)
     console.log(this.props)
     console.log(this.props.routeToGet.user_id.email)
