@@ -39,7 +39,7 @@ export default function RouteList(props) {
               Skill Level: <Rating maxRating="5" rating={route.skill_level} disabled/>
               </Item.Description>
               <Item.Description style={{marginRight: 130}} align="left">{route.comments}</Item.Description>
-              <Item.Extra align="left">Length: {route.length}</Item.Extra>
+              <Item.Extra align="left">Length: {route.length} miles</Item.Extra>
               
               { route.user_id.email == props.email &&
               
