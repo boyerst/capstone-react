@@ -60,7 +60,7 @@ export default class RouteContainer extends Component {
       body: JSON.stringify(routeToAdd)
     })
     const createRouteJson = await createRouteResponse.json()
-    // console.log("Here is the result of createRoute:")
+    console.log("Here is the result of createRoute:")
     console.log(createRouteJson)
 
     if(createRouteResponse.status === 201) {
@@ -71,8 +71,8 @@ export default class RouteContainer extends Component {
         })
         }
     } catch (error){
-      // console.log(error)
-      // console.log("There was an error creating the Route")
+      console.log(error)
+      console.log("There was an error creating the Route")
     }
   }
 
