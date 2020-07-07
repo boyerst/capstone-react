@@ -44,6 +44,38 @@ export default class RouteContainer extends Component {
 
 
 
+  createRoute = async (routeToAdd) => {
+  console.log("Here is the route you are trying to create:")
+  console.log(routeToAdd)
+  try {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
+
+    const createRouteResponse = await fetch(url, {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Accept': 'application/json'
+      },
+      body: JSON.stringify(routeToAdd)
+    })
+    const createRouteJson = await createRouteResponse.json()
+    console.log("Here is the result of createRoute:")
+    console.log(createRouteJson)
+
+    if(createRouteResponse.status === 201) {
+      const routes = this.state.routes
+      routes.push(createRouteJson.data)
+      this.setState({
+        routes: routes
+        })
+        }
+    } catch (error){
+      console.log(error)
+      console.log("There was an error creating the Route")
+    }
+  }
+
 
 
 
@@ -119,38 +151,6 @@ export default class RouteContainer extends Component {
 
 
 
-  createRoute = async (routeToAdd) => {
-  console.log("Here is the route you are trying to create:")
-  console.log(routeToAdd)
-  try {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
-
-    const createRouteResponse = await fetch(url, {
-      credentials: 'include',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(routeToAdd)
-    })
-    const createRouteJson = await createRouteResponse.json()
-    console.log("Here is the result of createRoute:")
-    console.log(createRouteJson)
-
-    if(createRouteResponse.status === 201) {
-      const routes = this.state.routes
-      routes.push(createRouteJson.data)
-      this.setState({
-        routes: routes
-        })
-        }
-    } catch (error){
-      console.log(error)
-      console.log("There was an error creating the Route")
-    }
-  }
-
 
 
 
@@ -161,7 +161,7 @@ export default class RouteContainer extends Component {
       console.log(url);
       const routesResponse = await fetch(url, {
         credentials: "include",
-        // headers: {
+        // headers: { *GET don't need to send this
         //   'Content-Type': 'application/json',
         //   'Accept' : 'application/json',
         
