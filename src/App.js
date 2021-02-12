@@ -7,17 +7,17 @@ import Footer from './Footer'
 import GalleryContainer from './GalleryContainer'
 
 
-Testing
 
-// export default class App extends Component {
-//   constructor() {
-//     super()
-//     this.state = {
-//       loggedIn: false, 
-//       loggedInUserEmail: ''
-//     }
 
-//   }
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      loggedIn: false, 
+      loggedInUserEmail: ''
+    }
+
+  }
   
   
 
