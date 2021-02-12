@@ -12,21 +12,25 @@ import { Link, Button } from 'semantic-ui-react'
 
 export default class RouteContainer extends Component {
 
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     routes: [],
-  //     idOfRouteToEdit: -1,
-  //     idOfRouteToGet: -1,
-  //     routeToGet: null,
-  //     loggedInUserEmail: null,
+
+
+//The following was commented out:
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      routes: [],
+      idOfRouteToEdit: -1,
+      idOfRouteToGet: -1,
+      routeToGet: null,
+      loggedInUserEmail: null,
  
    
 
 
-  //   }
+    }
 
-  // }
+  }
   
 
   componentDidMount() {
