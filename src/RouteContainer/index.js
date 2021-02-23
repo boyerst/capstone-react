@@ -6,7 +6,7 @@ import EditRouteForm from '../EditRouteForm'
 
 import '../App.css'
 
-import '../css'
+
 // import RouteShow from '../RouteShow'
 import { Link, Button } from 'semantic-ui-react'
 
