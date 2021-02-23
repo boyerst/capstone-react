@@ -6,7 +6,7 @@ import EditRouteForm from '../EditRouteForm'
 
 import '../App.css'
 
-
+import '../css'
 // import RouteShow from '../RouteShow'
 import { Link, Button } from 'semantic-ui-react'
 
@@ -158,14 +158,13 @@ export default class RouteContainer extends Component {
 
 
 
-
   getAllRoutes = async () => {
     try {
       const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
       console.log("Trying to fetch data from:");
       console.log(url);
       const routesResponse = await fetch(url, {
-        credentials: "include",
+        credentials: 'include',
         // headers: { *GET don't need to send this
         //   'Content-Type': 'application/json',
         //   'Accept' : 'application/json',

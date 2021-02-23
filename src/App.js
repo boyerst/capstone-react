@@ -9,15 +9,15 @@ import GalleryContainer from './GalleryContainer'
 
 
 
-export default class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      loggedIn: false, 
-      loggedInUserEmail: ''
-    }
+// export default class App extends Component {
+//   constructor() {
+//     super()
+//     this.state = {
+//       loggedIn: false, 
+//       loggedInUserEmail: ''
+//     }
 
-  }
+//   }
   
   
 
