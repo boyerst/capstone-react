@@ -23,7 +23,7 @@ export default class RouteContainer extends Component {
       idOfRouteToEdit: -1,
       idOfRouteToGet: -1,
       routeToGet: null,
-      loggedInUserEmail: null,
+      loggedInUserEmail: null
  
    
 
@@ -241,7 +241,7 @@ export default class RouteContainer extends Component {
 
     return(
       <React.Fragment>
-        <h2 className="title">WMAT Tracks</h2>
+        <h2 className="title">W.M.A.T. Tracks</h2>
 
         <NewRouteForm 
           createRoute={this.createRoute}

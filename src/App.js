@@ -34,6 +34,7 @@ export default class App extends Component {
         body: JSON.stringify(registrationInfo),
       })
       console.log("registerResponse", registerResponse)
+      console.log(process.env.REACT_APP_API_URL)
       const registerJson = await registerResponse.json()
       console.log("registerJson", registerJson)
       if(registerResponse.status === 201) {
@@ -44,7 +45,6 @@ export default class App extends Component {
       }
     } catch(error) {
       console.log("Error in registration route")
-      console.log(process.env.REACT_APP_API_URL)
       console.log(error)
     } 
   }
@@ -54,7 +54,7 @@ export default class App extends Component {
   login = async (loginInfo) => {
     console.log("Here is the login info from App.js:", loginInfo);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
-    console.log(process.env.REACT_APP_API_URL)
+
     try {
       const loginResponse = await fetch(url, {
         credentials: 'include',
