@@ -1,12 +1,15 @@
 FLASK:
 
-https://wmattracks.herokuapp.com/
+OLD: https://wmattracks.herokuapp.com/
 
+NEW: https://wmat-tracks.herokuapp.com/ | https://git.heroku.com/wmat-tracks.git
 
 REACT: 
 
-https://wmat-tracks.herokuapp.com/
-https://wmatracks.herokuapp.com/ | https://git.heroku.com/wmatracks.git
+OLD: https://wmat-tracks.herokuapp.com/
+
+NEW: https://wmattracks.herokuapp.com/ | https://git.heroku.com/wmattracks.git
+
 
 
 
