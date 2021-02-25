@@ -4,13 +4,15 @@ OLD: https://wmattracks.herokuapp.com/
 
 NEW: https://wmat-tracks.herokuapp.com/ | https://git.heroku.com/wmat-tracks.git
 
+https://wmattracks.herokuapp.com/ | https://git.heroku.com/wmattracks.git
+
 REACT: 
 
 OLD: https://wmat-tracks.herokuapp.com/
 
 NEW: https://wmattracks.herokuapp.com/ | https://git.heroku.com/wmattracks.git
 
-
+https://wmat-tracks.herokuapp.com/ | https://git.heroku.com/wmat-tracks.git
 
 
 _____________________________
