@@ -163,6 +163,7 @@ export default class RouteContainer extends Component {
       const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
       console.log("Trying to fetch data from:");
       console.log(url);
+      console.log(process.env.REACT_APP_API_URL)
       const routesResponse = await fetch(url, {
         credentials: 'include'
         // headers: { *GET don't need to send this
