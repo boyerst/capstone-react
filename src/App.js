@@ -44,6 +44,7 @@ export default class App extends Component {
       }
     } catch(error) {
       console.log("Error in registration route")
+      console.log(process.env.REACT_APP_API_URL)
       console.log(error)
     } 
   }
@@ -132,3 +133,6 @@ export default class App extends Component {
     );    
   }
 }
+
+
+

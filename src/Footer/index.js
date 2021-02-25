@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <footer>
-        Created by &copy;WMATrack Leanings
+        Created by &copy; Leanings
       </footer>
     </div>
   );

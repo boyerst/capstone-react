@@ -241,7 +241,7 @@ export default class RouteContainer extends Component {
 
     return(
       <React.Fragment>
-        <h2 className="title">W.M.A.T. Tracks</h2>
+        <h2 className="title">W.M.A.T.racks</h2>
 
         <NewRouteForm 
           createRoute={this.createRoute}
