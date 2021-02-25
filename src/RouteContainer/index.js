@@ -164,7 +164,7 @@ export default class RouteContainer extends Component {
       console.log("Trying to fetch data from:");
       console.log(url);
       const routesResponse = await fetch(url, {
-        credentials: 'include',
+        credentials: 'include'
         // headers: { *GET don't need to send this
         //   'Content-Type': 'application/json',
         //   'Accept' : 'application/json',
@@ -241,7 +241,7 @@ export default class RouteContainer extends Component {
 
     return(
       <React.Fragment>
-        <h2 className="title">W.M.A.T.racks</h2>
+        <h2 className="title">WMAT Tracks</h2>
 
         <NewRouteForm 
           createRoute={this.createRoute}

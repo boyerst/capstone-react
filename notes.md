@@ -6,7 +6,7 @@ https://wmattracks.herokuapp.com/
 REACT: 
 
 https://wmat-tracks.herokuapp.com/
-
+https://wmatracks.herokuapp.com/ | https://git.heroku.com/wmatracks.git
 
 
 
@@ -34,31 +34,7 @@ _____________________________
 
 
 
-THANK REUBEN AND TA's
 
-
-WHAT WOULD TELL YOURSELF
--get some sleep, even if you didnt accomplish anything that night, its better to take the loss so that you can have a chance at winning the next day
-
-
-
-
--the frustrating times when you cant figure out code for an hour or a day or two make the successful problems worth it. Just like life there are ups and downs and in coding they are extremely rewarding
-
-
-
-
-NOTES FROM OTHERS:
-
-
-MattK: beutiful soup-takes html doc and turns into object
-dark mode
-react rubberband
-delete user, make "are you sure?" message
-simulate phone on app
-BOOKMARK CLASSMATE REPOS: see REPOS for: 
-Same: (map stuff)
-Taiga: chat/video chat API, made icons/graphics in photoshop
 
 
 ________________________
