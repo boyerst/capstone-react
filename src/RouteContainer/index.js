@@ -44,80 +44,6 @@ export default class RouteContainer extends Component {
     })
   }
 
-  getAllRoutes = async () => {
-    try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
-      console.log("Trying to fetch data from:");
-      console.log(url);
-      console.log(process.env.REACT_APP_API_URL)
-      const routesResponse = await fetch(url, {
-        credentials: 'include'
-        // headers: { *GET don't need to send this
-        //   'Content-Type': 'application/json',
-        //   'Accept' : 'application/json',
-        
-          // 'Authorization' : 'Bearer e1e8256e-c41f-4d7a-9f5c-4bc97fb2c6d9'
-        // },
-      })
-      console.log("Here is the Response from the fetch call:");
-      console.log(routesResponse);
-      const routesJson = await routesResponse.json()
-      console.log("Here is the data we got in getAllRoutes in RouteContainer:");
-      console.log(routesJson);
-      this.setState({
-        routes:routesJson.data,
-
-      })
-    } catch(err) {
-      console.error("Error getting route data.", err)
-    }
-  }
-
-  getRoutes = async () => {
-    try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
-      console.log("Trying to fetch data from:");
-      console.log(url);
-      const routesResponse = await fetch(url, {
-        credentials: 'include'
-      })
-      console.log("Here is the Response from the fetch call:");
-      console.log(routesResponse);
-      const routesJson = await routesResponse.json()
-      console.log("Here is the data we got in getRoutes in RouteContainer:");
-      console.log(routesJson);
-      this.setState({
-        routes:routesJson.data
-      })
-    } catch(err) {
-      console.error("Error getting route data.", err)
-    }
-  }
-
-  getRoute = async (idOfRouteToGet) => {
-    console.log("you are trying to get route with id: ", idOfRouteToGet)
-    try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + idOfRouteToGet
-      console.log("Trying to fetch data from:");
-      console.log(url);
-      const routeResponse = await fetch(url, {
-        credentials: 'include'
-      })
-      console.log("Here is the Response from the fetch call:");
-      console.log(routeResponse);
-      const routeJson = await routeResponse.json()
-      console.log("Here is the data we got in getRoute() in RouteContainer:");
-      console.log(routeJson);
-      this.setState({
-        idOfRouteToGet: idOfRouteToGet,
-        routeToGet: routeJson
-   
-      })
-    } catch(err) {
-      console.error("Error getting route data.", err)
-
-    }
-  }
   
  
 
@@ -232,6 +158,80 @@ export default class RouteContainer extends Component {
 
 
 
+  getAllRoutes = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      console.log(process.env.REACT_APP_API_URL)
+      const routesResponse = await fetch(url, {
+        credentials: 'include'
+        // headers: { *GET don't need to send this
+        //   'Content-Type': 'application/json',
+        //   'Accept' : 'application/json',
+        
+          // 'Authorization' : 'Bearer e1e8256e-c41f-4d7a-9f5c-4bc97fb2c6d9'
+        // },
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routesResponse);
+      const routesJson = await routesResponse.json()
+      console.log("Here is the data we got in getAllRoutes in RouteContainer:");
+      console.log(routesJson);
+      this.setState({
+        routes:routesJson.data,
+
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+    }
+  }
+
+  getRoutes = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      const routesResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routesResponse);
+      const routesJson = await routesResponse.json()
+      console.log("Here is the data we got in getRoutes in RouteContainer:");
+      console.log(routesJson);
+      this.setState({
+        routes:routesJson.data
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+    }
+  }
+
+  getRoute = async (idOfRouteToGet) => {
+    console.log("you are trying to get route with id: ", idOfRouteToGet)
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + idOfRouteToGet
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      const routeResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routeResponse);
+      const routeJson = await routeResponse.json()
+      console.log("Here is the data we got in getRoute() in RouteContainer:");
+      console.log(routeJson);
+      this.setState({
+        idOfRouteToGet: idOfRouteToGet,
+        routeToGet: routeJson
+   
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+
+    }
+  }
 
   render() {
     console.log("Here is this.state in render() in RouteContainer");
