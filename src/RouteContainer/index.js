@@ -34,7 +34,6 @@ export default class RouteContainer extends Component {
   
 
   componentDidMount() {
-    // this.getAllRoutes()
     this.getAllRoutes()
   }
 
