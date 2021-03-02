@@ -75,7 +75,6 @@ export default class RouteContainer extends Component {
       this.setState({
         idOfRouteToGet: idOfRouteToGet,
         routeToGet: routeJson
-   
       })
     } catch(err) {
       console.error("Error getting route data.", err)
@@ -91,12 +90,12 @@ export default class RouteContainer extends Component {
       console.log(process.env.REACT_APP_API_URL)
       const routesResponse = await fetch(url, {
         credentials: 'include'
-        // headers: { //*GET don't need to send this
-        //   'Content-Type': 'application/json',
-        //   'Accept' : 'application/json',
+        headers: { //*GET don't need to send this
+          'Content-Type': 'application/json',
+          'Accept' : 'application/json',
         
           // 'Authorization' : 'Bearer e1e8256e-c41f-4d7a-9f5c-4bc97fb2c6d9'
-        // },
+        },
       })
       console.log("Here is the Response from the fetch call:");
       console.log(routesResponse);
@@ -104,8 +103,7 @@ export default class RouteContainer extends Component {
       console.log("Here is the data we got in getAllRoutes in RouteContainer:");
       console.log(routesJson);
       this.setState({
-        routes:routesJson.data,
-
+        routes:routesJson.data
       })
     } catch(err) {
       console.error("Error getting route data.", err)
@@ -236,7 +234,7 @@ export default class RouteContainer extends Component {
         <NewRouteForm 
           createRoute={this.createRoute}
           //this is on the main page: it opens as a modal
-          />
+        />
         {
         this.state.idOfRouteToGet === -1
         ? //if true
@@ -250,7 +248,7 @@ export default class RouteContainer extends Component {
           getRoute={this.getRoute}
           routeToGet={this.state.routeToGet}
          
-          />
+        />
 
         : //if not
         <div>
