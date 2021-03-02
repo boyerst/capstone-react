@@ -12,10 +12,6 @@ import { Link, Button } from 'semantic-ui-react'
 
 export default class RouteContainer extends Component {
 
-
-
-//The following was commented out:
-
   constructor(props) {
     super(props)
     this.state = {
@@ -24,15 +20,15 @@ export default class RouteContainer extends Component {
       idOfRouteToGet: -1,
       routeToGet: null,
       loggedInUserEmail: null
- 
-   
-
-
     }
 
   }
   
 
+  componentDidMount() {
+    // this.getAllRoutes()
+    this.getAllRoutes()
+  }
 
   returnToList = () => {
     this.setState({
@@ -40,43 +36,111 @@ export default class RouteContainer extends Component {
     })
   }
 
-  
-  componentDidMount() {
-    this.getAllRoutes()
-  }
- 
+  getAllRoutes = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      console.log(process.env.REACT_APP_API_URL)
+      const routesResponse = await fetch(url, {
+        credentials: 'include'
+        // headers: { //*GET don't need to send this
+        //   'Content-Type': 'application/json',
+        //   'Accept' : 'application/json',
+        
+          // 'Authorization' : 'Bearer e1e8256e-c41f-4d7a-9f5c-4bc97fb2c6d9'
+        // },
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routesResponse);
+      const routesJson = await routesResponse.json()
+      console.log("Here is the data we got in getAllRoutes in RouteContainer:");
+      console.log(routesJson);
+      this.setState({
+        routes:routesJson.data,
 
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+    }
+  }
+
+  getRoutes = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      const routesResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routesResponse);
+      const routesJson = await routesResponse.json()
+      console.log("Here is the data we got in getRoutes in RouteContainer:");
+      console.log(routesJson);
+      this.setState({
+        routes:routesJson.data
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+    }
+  }
+
+  getRoute = async (idOfRouteToGet) => {
+    console.log("you are trying to get route with id: ", idOfRouteToGet)
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + idOfRouteToGet
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      const routeResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routeResponse);
+      const routeJson = await routeResponse.json()
+      console.log("Here is the data we got in getRoute() in RouteContainer:");
+      console.log(routeJson);
+      this.setState({
+        idOfRouteToGet: idOfRouteToGet,
+        routeToGet: routeJson
+   
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+
+    }
+  }
 
 
   createRoute = async (routeToAdd) => {
-  console.log("Here is the route you are trying to create:")
-  console.log(routeToAdd)
-  try {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
+    console.log("Here is the route you are trying to create:")
+    console.log(routeToAdd)
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
 
-    const createRouteResponse = await fetch(url, {
-      credentials: 'include',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Accept': 'application/json'
-      },
-      body: JSON.stringify(routeToAdd)
-    })
-    const createRouteJson = await createRouteResponse.json()
-    console.log("Here is the result of createRoute:")
-    console.log(createRouteJson)
+      const createRouteResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Accept': 'application/json'
+        },
+        body: JSON.stringify(routeToAdd)
+      })
+      const createRouteJson = await createRouteResponse.json()
+      console.log("Here is the result of createRoute:")
+      console.log(createRouteJson)
 
-    if(createRouteResponse.status === 201) {
-      const routes = this.state.routes
-      routes.push(createRouteJson.data)
-      this.setState({
-        routes: routes
+      if(createRouteResponse.status === 201) {
+        const routes = this.state.routes
+        routes.push(createRouteJson.data)
+        this.setState({
+          routes: routes
         })
-        }
+      } 
     } catch (error){
-      console.log(error)
-      console.log("There was an error creating the Route")
+        console.log(error)
+        console.log("There was an error creating the Route")
     }
   }
 
@@ -157,80 +221,6 @@ export default class RouteContainer extends Component {
 
 
 
-  getAllRoutes = async () => {
-    try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/all"
-      console.log("Trying to fetch data from:");
-      console.log(url);
-      console.log(process.env.REACT_APP_API_URL)
-      const routesResponse = await fetch(url, {
-        credentials: 'include'
-        // headers: { //*GET don't need to send this
-        //   'Content-Type': 'application/json',
-        //   'Accept' : 'application/json',
-        
-          // 'Authorization' : 'Bearer e1e8256e-c41f-4d7a-9f5c-4bc97fb2c6d9'
-        // },
-      })
-      console.log("Here is the Response from the fetch call:");
-      console.log(routesResponse);
-      const routesJson = await routesResponse.json()
-      console.log("Here is the data we got in getAllRoutes in RouteContainer:");
-      console.log(routesJson);
-      this.setState({
-        routes:routesJson.data,
-
-      })
-    } catch(err) {
-      console.error("Error getting route data.", err)
-    }
-  }
-
-  getRoutes = async () => {
-    try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
-      console.log("Trying to fetch data from:");
-      console.log(url);
-      const routesResponse = await fetch(url, {
-        credentials: 'include'
-      })
-      console.log("Here is the Response from the fetch call:");
-      console.log(routesResponse);
-      const routesJson = await routesResponse.json()
-      console.log("Here is the data we got in getRoutes in RouteContainer:");
-      console.log(routesJson);
-      this.setState({
-        routes:routesJson.data
-      })
-    } catch(err) {
-      console.error("Error getting route data.", err)
-    }
-  }
-
-  getRoute = async (idOfRouteToGet) => {
-    console.log("you are trying to get route with id: ", idOfRouteToGet)
-    try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + idOfRouteToGet
-      console.log("Trying to fetch data from:");
-      console.log(url);
-      const routeResponse = await fetch(url, {
-        credentials: 'include'
-      })
-      console.log("Here is the Response from the fetch call:");
-      console.log(routeResponse);
-      const routeJson = await routeResponse.json()
-      console.log("Here is the data we got in getRoute() in RouteContainer:");
-      console.log(routeJson);
-      this.setState({
-        idOfRouteToGet: idOfRouteToGet,
-        routeToGet: routeJson
-   
-      })
-    } catch(err) {
-      console.error("Error getting route data.", err)
-
-    }
-  }
 
   render() {
     console.log("Here is this.state in render() in RouteContainer");
@@ -262,12 +252,9 @@ export default class RouteContainer extends Component {
          
           />
 
-
         : //if not
         <div>
           
-        
-       
           <MapContainer getRoute={this.getRoute}email={this.props.email} className="mapCont" routeToGet={this.state.routeToGet} routes={this.state.routes} />
           <Button className="returnToList" onClick={this.returnToList}>Return To List </Button>
 
@@ -287,14 +274,16 @@ export default class RouteContainer extends Component {
         }
         
  
-        
-  
       </React.Fragment>
-
+  
     )
   }
   
 }
 
+
+
+
           
+
 
