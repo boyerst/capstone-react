@@ -33,9 +33,6 @@ export default class RouteContainer extends Component {
   }
   
 
-  componentDidMount() {
-    this.getAllRoutes()
-  }
 
   returnToList = () => {
     this.setState({
@@ -44,6 +41,9 @@ export default class RouteContainer extends Component {
   }
 
   
+  componentDidMount() {
+    this.getAllRoutes()
+  }
  
 
 
