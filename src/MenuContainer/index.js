@@ -9,7 +9,7 @@ export default class MenuContainer extends Component {
     super(props)
     this.state =  { 
       activeItem: 'logout',
-      loggedIn: true
+      loggedIn: false
     }
   }
 
