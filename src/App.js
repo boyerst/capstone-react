@@ -64,7 +64,7 @@ export default class App extends Component {
         },
         body: JSON.stringify(loginInfo),
       })
-      console.log("Here is the loginResponse from App.js", loginResponse);
+      console.log("Here is the loginResponse", loginResponse);
       const loginJson = await loginResponse.json()
       console.log("Here is Login JSON after fetch", loginJson);
       if(loginResponse.status === 200) {
