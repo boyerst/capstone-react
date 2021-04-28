@@ -79,7 +79,7 @@ export default class App extends Component {
     }
   }
 
-TESTESTES
+
 
   logout = async () => {
     console.log("Use has logged out")
