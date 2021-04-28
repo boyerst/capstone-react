@@ -23,7 +23,6 @@ const GalleryContainer = () => (
         <Image style={{padding:15}}src='https://i.imgur.com/DPWq2oi.jpg' />
         <Image style={{padding:15}}src='https://i.imgur.com/1IrEr1y.jpg' />
         <Image style={{padding:15}}src='https://i.imgur.com/5Tg1WW0.jpg' />
-        
         <Image style={{padding:15}}src='https://i.imgur.com/ny5G3WY.jpg' />
         <Image style={{padding:15}}src='https://i.imgur.com/lXu5xjH.jpg' />
         <Image style={{padding:15}}src='https://i.imgur.com/96KHyw7.jpg' />

@@ -152,7 +152,7 @@ export default class RouteContainer extends Component {
       console.log(url);
       console.log(process.env.REACT_APP_API_URL)
       const routesResponse = await fetch(url, {
-        credentials: 'include'
+        // credentials: 'include'
         // headers: { //*GET don't need to send this
         //   'Content-Type': 'application/json',
         //   'Accept' : 'application/json'

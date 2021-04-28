@@ -22,6 +22,7 @@ handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 
 
 render(props) {
+  console.log("Here is this.props in MenuContainer:")
   console.log(this.props)
     const { activeItem } = this.state
     return (

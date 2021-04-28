@@ -52,7 +52,7 @@ export default class App extends Component {
 
 
   login = async (loginInfo) => {
-    console.log("Here is the login info from App.js:", loginInfo);
+    console.log("Here is the login info:", loginInfo);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
 
     try {
@@ -64,7 +64,7 @@ export default class App extends Component {
         },
         body: JSON.stringify(loginInfo),
       })
-      console.log("Here is the loginResponse", loginResponse);
+      console.log("Here is the loginResponse from App.js", loginResponse);
       const loginJson = await loginResponse.json()
       console.log("Here is Login JSON after fetch", loginJson);
       if(loginResponse.status === 200) {
