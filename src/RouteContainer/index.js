@@ -10,6 +10,7 @@ import '../App.css'
 // import RouteShow from '../RouteShow'
 import { Link, Button } from 'semantic-ui-react'
 
+
 export default class RouteContainer extends Component {
 
   constructor(props) {
@@ -21,7 +22,6 @@ export default class RouteContainer extends Component {
       routeToGet: null,
       loggedInUserEmail: null
     }
-
   }
   
 
@@ -277,8 +277,6 @@ export default class RouteContainer extends Component {
   
     )
   }
-
-
 }
 
   
