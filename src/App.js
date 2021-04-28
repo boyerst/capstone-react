@@ -82,6 +82,7 @@ export default class App extends Component {
 
 
   logout = async () => {
+    console.log("Use has logged out")
     try {
       const url = process.env.REACT_APP_API_URL + '/api/v1/users/logout'
 
