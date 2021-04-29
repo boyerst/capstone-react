@@ -7,7 +7,7 @@ import '../App.css'
 export default function RouteList(props) {
 
 
-  console.log("Here is props.routeToGet & props in /Route List:")
+  console.log("Here is props.routeToGet & props in /RouteList:")
   console.log(props.routeToGet)
   console.log(props)
   
