@@ -105,7 +105,7 @@ export default class App extends Component {
     }
   }
 
-
+//CUT "logout={this.logout}" --- try not passing it to menu container
 
   render() {
     console.log("Here is process.env:")
@@ -118,7 +118,7 @@ export default class App extends Component {
           ?
           <React.Fragment>
             <GalleryContainer />
-            <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
+            <MenuContainer email={this.state.loggedInUserEmail} />
             <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>
             <Footer />
 
