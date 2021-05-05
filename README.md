@@ -6,10 +6,14 @@
 #### Views
 
 ![Views](https://i.imgur.com/GT3puBA.png)
+
 ![Views](https://i.imgur.com/OGrR3fO.png)
+
 ![Views](https://i.imgur.com/a0SxpYx.png)
+
 ![Views](https://i.imgur.com/obpEzHQ.png)
 
+---
 
 #### User Story
 
@@ -47,9 +51,7 @@
 * When viewing their own posted routes, the user will have the ability to edit/update and delete their their content
   * They will have the opportunity to do this by clicking the respective buttons displayed with the route
 
-
-
-
+___
 
 #### Wireframes
 ![Wireframe](https://i.imgur.com/v4HfDyH.png)
