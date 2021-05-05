@@ -248,7 +248,7 @@ export default class RouteContainer extends Component {
           deleteRoute={this.deleteRoute}
           getRoute={this.getRoute}
           routeToGet={this.state.routeToGet}
-        
+
          
         />
 
@@ -265,7 +265,7 @@ export default class RouteContainer extends Component {
           this.state.idOfRouteToEdit !== -1
           &&
         <EditRouteForm 
-          // this is one the main page: it conditionally opens based on Route index #
+          // this is on the main page: it conditionally opens based on Route index #
           key={this.state.idOfRouteToEdit}
           routeToEdit={this.state.routes.find((route) => route.id === this.state.idOfRouteToEdit)}
           updateRoute={this.updateRoute}

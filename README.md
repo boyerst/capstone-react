@@ -1,4 +1,15 @@
-![Wireframe](https://i.imgur.com/14l99pl.png)
+![Header](https://i.imgur.com/14l99pl.png)
+
+
+***
+
+#### Views
+
+![Views](https://i.imgur.com/GT3puBA.png)
+![Views](https://i.imgur.com/OGrR3fO.png)
+![Views](https://i.imgur.com/a0SxpYx.png)
+![Views](https://i.imgur.com/obpEzHQ.png)
+
 
 #### User Story
 
