@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <footer>
-        Created by &copy; Leanings
+        Created by &copy;Leanings, Inc.
       </footer>
     </div>
   );

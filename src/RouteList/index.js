@@ -40,6 +40,7 @@ export default function RouteList(props) {
               </Item.Description>
               <Item.Description style={{marginRight: 130}} align="left">{route.comments}</Item.Description>
               <Item.Extra align="left">Length: {route.length} miles</Item.Extra>
+              <Item.Extra align="left">More Info: {route.user_id.email}</Item.Extra>
               
               { route.user_id.email == props.email &&
               
@@ -69,7 +70,7 @@ export default function RouteList(props) {
                 <Button 
                   floated='right'
                   onClick={ () => props.getRoute(route.id) }
-                  >See More
+                  >See Map
                 </Button> 
               </Item.Extra>
             </Item.Content>
