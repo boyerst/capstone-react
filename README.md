@@ -12,7 +12,7 @@ WMAT Tracks is for people who love to ride motorcycles off of the beaten path, e
 
 ***
 
-#### Views 
+### Views 
 
 ![Views](https://i.imgur.com/GT3puBA.png)
 
@@ -25,7 +25,7 @@ WMAT Tracks is for people who love to ride motorcycles off of the beaten path, e
 ---
 
 
-#### User Story
+### User Story
 
 * The main purpose of this app is host content consisting of recreational motorcycle riding routes on or around the 1100 mile Wisconsin Michigan Adventure Trail
 
