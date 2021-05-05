@@ -4,8 +4,7 @@ ___
 
 
 
-
-###### Welcome to WMAT Tracks
+# Welcome to WMAT Tracks 
 
 
 WMAT Tracks is for people who love to ride motorcycles off of the beaten path, especially on and around the (W)isconsin-(M)ichigan (A)deventure (T)rail. Come here to share or take route data for your next ride, or just browse and dream. It's a place to exchange .gpx files straight from or to your GPS.
@@ -13,7 +12,7 @@ WMAT Tracks is for people who love to ride motorcycles off of the beaten path, e
 
 ***
 
-#### Views
+#### Views 
 
 ![Views](https://i.imgur.com/GT3puBA.png)
 
