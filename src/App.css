@@ -33,6 +33,7 @@
 }
 
 
+
 /*.fragment {
   background-color: yellow;
 }*/
@@ -163,5 +164,19 @@
   padding: 19px;
 /*  align-self: auto;*/
 }
+
+
+.newRouteModal .modal-content {
+  background: grey;
+}
+
+
+
+
+
+
+
+
+
 
 

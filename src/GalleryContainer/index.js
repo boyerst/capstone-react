@@ -13,7 +13,7 @@ const GalleryContainer = () => (
   <Modal trigger={<Button className="gallery">Gallery</Button>}>
     <Modal.Header>Gallery</Modal.Header>
     <Modal.Content image>
-      <Image wrapped size='medium' />
+      <Image wrapped size='extrasmall' />
       <Modal.Description textAlign={"center"}>
  
         <div className="pics">
