@@ -11,7 +11,7 @@ WMAT Tracks is for people who love to ride motorcycles off of the beaten path, e
 
 It is a single page RESTful API that uses React.js, Python and a Flask framework.
 
-[Take a ride!] (https://wmattracks.herokuapp.com/)
+[Take a ride!](https://wmattracks.herokuapp.com/)
 
 ***
 
