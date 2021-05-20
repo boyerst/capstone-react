@@ -9,6 +9,9 @@ ___
 
 WMAT Tracks is for people who love to ride motorcycles off of the beaten path, especially on and around the (W)isconsin-(M)ichigan (A)deventure (T)rail. Come here to share or take route data for your next ride, or just browse and dream. It's a place to exchange .gpx files straight from or to your GPS.
 
+It is a single page RESTful API that uses React.js, Python and a Flask framework.
+
+[Take a ride!] (https://wmattracks.herokuapp.com/)
 
 ***
 

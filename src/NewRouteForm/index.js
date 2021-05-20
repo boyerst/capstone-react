@@ -73,7 +73,6 @@ export default class NewRouteForm extends Component {
   render() {
   return(
     <Modal 
-    className="newRouteModal"
     primary="true"
     basic size= "large" 
     trigger={<Button className="new-route" onClick={this.handleOpen}>Add New Route</Button>}
