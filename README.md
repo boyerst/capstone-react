@@ -23,7 +23,9 @@ WMAT Tracks is a single page RESTful API that uses React.js, Python and a Flask 
 
 ![Views](https://i.imgur.com/a0SxpYx.png)
 
-![Views](https://i.imgur.com/obpEzHQ.png)
+![Views](https://i.imgur.com/Cohi4i3.png)
+
+![Views](https://i.imgur.com/hkdQ1CC.png)
 
 ---
 
