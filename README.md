@@ -7,7 +7,7 @@ ___
 # Welcome to WMAT Tracks 
 
 
-WMAT Tracks is for people who love to ride motorcycles off of the beaten path - especially on and around the Wisconsin-Michigan Adventure Trail(WMAT). Typically, riders are on their own when it comes to guided directions on these trails. Luckily, users can come here to share or grab the navigation data that will keep them on the right path. Its a place to exchange waypoints and/or .gpx files that are compatible with common GPS systems.
+WMAT Tracks is for people who love to ride motorcycles off of the beaten path - especially on and around the Wisconsin-Michigan Adventure Trail (WMAT). Typically, riders are on their own when it comes to guided directions on these trails. Luckily, users can come here to share or grab the navigation data that will keep them on the right path. Its a place to exchange waypoints and/or .gpx files that are compatible with common GPS systems.
 
 WMAT Tracks is a single page RESTful API that uses React.js, Python and a Flask framework.
 

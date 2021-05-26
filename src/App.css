@@ -126,7 +126,8 @@
   background-color: black;
 }*/
 .pics{
-  padding: 15px;
+  padding: 0px;
+  padding-right: 30px;
   align-content: center;
 }
 
