@@ -19,6 +19,7 @@ export default function RouteList(props) {
         backgroundColor: "#FFD60B",
         marginLeft: 150,
         marginRight: 100,
+        
 
       }}
       className="routeList"

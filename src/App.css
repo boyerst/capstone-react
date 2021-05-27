@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   background-color:#FFD60B;
-
 }
 
 
@@ -11,27 +10,24 @@
   display: flex;
   background-color: #FFD60B;
   margin-top: -20;
-
-
 }
+
 .div.routeList {
   display: flex;
   position: absolute;
- 
 }
 
+
+
 .link {
-  
   position: relative;
   align-self: auto;
   text-align: center;
-
 }
 
-.div.App {
+/*.div.App {
   background-color: #FFD60B;
-}
-
+}*/
 
 
 /*.fragment {
@@ -45,8 +41,6 @@
 /*  vertical-align: top;*/
   margin-top: -130px;
   background-color: #FFD60B;
-
-
 }
 
 .button.ui.button.new-route {
@@ -64,7 +58,6 @@
   margin-top: 152px;
   margin-left: 1595px;
   width: 160px;
-
 }
 
 .button.ui.button.deleteMarker {
@@ -117,14 +110,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
-/*.div.mapStyle {
-  color: black;
-  background-color: black;
-}*/
+
 .pics{
   padding: 0px;
   padding-right: 30px;
@@ -160,7 +148,6 @@
 
 .mapDivP {
 /*  display: flex;*/
-
   text-align: left;
   padding: 19px;
 /*  align-self: auto;*/
