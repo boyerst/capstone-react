@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color:#FFD60B;
+  font-family: "OstrichSansInline-Regular";
 }
 
 
@@ -11,6 +12,8 @@
   background-color: #FFD60B;
   margin-top: -20;
 }
+
+
 
 .div.routeList {
   display: flex;
