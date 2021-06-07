@@ -1,24 +1,44 @@
+
+
 .App {
   text-align: center;
   background-color:#FFD60B;
 /*  font-family: "OstrichSansInline-Regular";*/
 }
 
-
-#FFD60B
+/*#FFD60B*/
 
 .items {
   display: flex;
+  flex-direction: column;
   background-color: #FFD60B;
   margin-top: -20;
 }
 
 
 
-.div.routeList {
+/*#FFD60B*/
+
+/*.items {
   display: flex;
-  position: absolute;
+  background-color: #FFD60B;
+  margin-top: -20;
 }
+*/
+
+
+
+/*.routeList {
+  background-color: black;
+}
+*/
+
+/*.routeList {
+  display: flex
+  position: absolute;
+  background-color: black;
+
+}*/
 
 
 
@@ -28,14 +48,7 @@
   text-align: center;
 }
 
-/*.div.App {
-  background-color: #FFD60B;
-}*/
 
-
-/*.fragment {
-  background-color: yellow;
-}*/
 
 .title {
   font-family: "OstrichSansInline-Regular";

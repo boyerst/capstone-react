@@ -15,23 +15,20 @@ export default function RouteList(props) {
   const routes = props.routes.map(route => {
     return (
      <StackGrid 
-      style={{
-        backgroundColor: "#FFD60B",
-        marginLeft: 150,
-        marginRight: 100,
-        
-
-      }}
+      // style={{
+      //   // backgroundColor: "#FFD60B",
+      //   // marginLeft: 150,
+      //   // marginRight: 100,
+      // }}
       className="routeList"
       key={route.id}
       columnWidth={1050}
       paddingbottom={300}
 
-           
       >
         <Item.Group  className="items" relaxed>
           <Item >
-          <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center'}} size='medium' src={route.images} alt={''} />
+          <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center', borderRadius: 20/ 2}} size='medium' src={route.images} alt={''}/>
             <Item.Content verticalAlign='middle'>
               <Item.Header>{route.location}</Item.Header>
         
