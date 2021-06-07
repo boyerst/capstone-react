@@ -45,7 +45,7 @@ function MapRenderer(props) {
             {markers}
         </Map>
             
-        <div className="mapDiv">
+        <div className="mapDiv" style={{borderRadius: 13/ 2}}>
           <p className="mapDivP" style={{fontWeight: 'bold'}}>
           <h2>ABOUT</h2> 
           <h4>{props.routeToGet.location}</h4>

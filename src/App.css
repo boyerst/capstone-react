@@ -6,8 +6,6 @@
 /*  font-family: "OstrichSansInline-Regular";*/
 }
 
-/*#FFD60B*/
-
 .items {
   display: flex;
   flex-direction: column;
@@ -15,40 +13,11 @@
   margin-top: -20;
 }
 
-
-
-/*#FFD60B*/
-
-/*.items {
-  display: flex;
-  background-color: #FFD60B;
-  margin-top: -20;
-}
-*/
-
-
-
-/*.routeList {
-  background-color: black;
-}
-*/
-
-/*.routeList {
-  display: flex
-  position: absolute;
-  background-color: black;
-
-}*/
-
-
-
 .link {
   position: relative;
   align-self: auto;
   text-align: center;
 }
-
-
 
 .title {
   font-family: "OstrichSansInline-Regular";
@@ -121,15 +90,11 @@
   width: 50%;
 }
 
-
-
-
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .pics{
   padding: 0px;
@@ -155,14 +120,13 @@
   right: 170px;
   width: 350px;
   height: 450px;
-  border: 3px solid black;
+  /*border: 4px solid black;*/
 }
 
 .footer {
   padding-bottom: 50px;
   padding-top: 350px;
 }
-
 
 .mapDivP {
   text-align: left;
