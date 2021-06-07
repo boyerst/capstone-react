@@ -12,7 +12,7 @@ import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
 const GalleryContainer = () => (
   <Modal trigger={<Button className="gallery">Gallery</Button>}>
     <Modal.Header>Gallery</Modal.Header>
-    <Modal.Content image>
+    <Modal.Content image >
       <Image wrapped size='extrasmall' />
       <Modal.Description textAlign={"center"}>
  
