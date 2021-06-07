@@ -122,6 +122,8 @@
 }
 
 
+
+
 .login {
   display: flex;
   justify-content: center;
@@ -163,14 +165,9 @@
 
 
 .mapDivP {
-/*  display: flex;*/
   text-align: left;
   padding: 19px;
-/*  align-self: auto;*/
 }
-
-
-
 
 
 
