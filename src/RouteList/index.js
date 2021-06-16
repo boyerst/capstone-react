@@ -15,6 +15,11 @@ export default function RouteList(props) {
   const routes = props.routes.map(route => {
     return (
      <StackGrid 
+        style={{
+          backgroundColor: "#FFD60B",
+          marginLeft: 150,
+          marginRight: 100,
+        }}
       className="routeList"
       key={route.id}
       columnWidth={1050}
