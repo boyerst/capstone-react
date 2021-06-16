@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import RouteContainer from './RouteContainer'
 import LoginRegistrationForm from './LoginRegistrationForm'
 import MenuContainer from './MenuContainer'
