@@ -23,7 +23,7 @@ export default function RouteList(props) {
       >
         <Item.Group  className="items" relaxed>
           <Item >
-          <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center', borderRadius: 20/ 2}} size='medium' src={route.images} alt={''}/>
+          <Item.Image className={"imageThumbnail"} style={{display: 'flex', alignItems: 'center', borderRadius: 40/ 2}} size='medium' src={route.images} alt={''}/>
             <Item.Content verticalAlign='middle'>
               <Item.Header>{route.location}</Item.Header>
         
