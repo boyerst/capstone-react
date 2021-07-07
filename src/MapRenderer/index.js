@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react'
 import { Button, Icon, Modal, Header, Image, Rating } from 'semantic-ui-react'
-import '../App.css';
+import '../App.css'
 
 
 
@@ -30,7 +30,7 @@ function MapRenderer(props) {
   })
 
 
-//in regards to the &nbsp; --> condition so that only one space depending on lenght of comment
+//in regards to the &nbsp; --> condition so that only one space depending on length of comment
 
     return(
    

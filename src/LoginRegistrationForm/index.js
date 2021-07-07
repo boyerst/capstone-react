@@ -88,6 +88,7 @@ export default class LoginRegisterForm extends Component {
               <Button positive  type= "Submit" fluid>
                 {this.state.action==="Login" ? "Log In": "Register"}
               </Button>
+            
             </Form>
             </Segment>
             <Message>
@@ -101,6 +102,7 @@ export default class LoginRegisterForm extends Component {
               <Message >
               Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
               </Message>
+           
             }
           </Message>
         </Grid.Column>

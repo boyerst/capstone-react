@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Item, Rating, Icon } from 'semantic-ui-react'
-import StackGrid from "react-stack-grid";
+import StackGrid from "react-stack-grid"
 import '../App.css'
 
 

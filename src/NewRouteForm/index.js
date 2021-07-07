@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button, Icon, Segment, Header, Rating, Modal } from 'semantic-ui-react'
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react'
 
 
 export default class NewRouteForm extends Component {

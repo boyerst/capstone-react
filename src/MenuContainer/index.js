@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Button } from 'semantic-ui-react'
-import {Redirect, useHistory } from 'react-router-dom';
+import {Redirect, useHistory } from 'react-router-dom'
 
 
 
