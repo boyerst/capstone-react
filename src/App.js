@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import RouteContainer from './RouteContainer'
 import LoginRegistrationForm from './LoginRegistrationForm'
+import ParticleComponent from './ParticleComponent'
 import MenuContainer from './MenuContainer'
 import Footer from './Footer'
 import GalleryContainer from './GalleryContainer'
@@ -106,22 +107,23 @@ export default class App extends Component {
   }
 
 
-
   render() {
     console.log("Here is process.env:")
     console.log(process.env)
     console.log(this.state)
     return (
+           
       <div className="App">
+        <ParticleComponent/>
         {
           this.state.loggedIn
           ?
+          
           <React.Fragment>
             <GalleryContainer />
             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
             <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>
             <Footer />
-
           
           </React.Fragment>
           :
@@ -130,10 +132,38 @@ export default class App extends Component {
             register={this.register}
           />
         }
-      </div>
+        </div>
     );    
   }
 }
+//   render() 
+//     console.log("Here is process.env:")
+//     console.log(process.env)
+//     console.log(this.state)
+//     return (
+//       <div className="App">
+//         {
+//           this.state.loggedIn
+//           ?
+//           <React.Fragment>
+
+//             <GalleryContainer />
+//             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
+//             <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>
+//             <Footer />
+
+          
+//           </React.Fragment>
+//           :
+//           <LoginRegistrationForm 
+//             login={this.login}
+//             register={this.register}
+//           />
+//         }
+//       </div>
+//     );    
+//   }
+// }
 
 
 

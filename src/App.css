@@ -2,8 +2,10 @@
 
 .App {
   text-align: center;
-  background-color:#FFD60B;
+/*  background-color:#FFD60B;*/
+  background-color: #416478;
 /*  font-family: "OstrichSansInline-Regular";*/
+  border: 5px solid red;
 }
 
 
@@ -12,8 +14,9 @@
 .items {
   display: flex;
   flex-direction: column;
-  background-color: #FFD60B;
-  margin-top: -20;
+/*  background-color: #FFD60B;*/
+  margin-top: -20; 
+  border: 5px solid red;
 }
 
 .link {
@@ -97,6 +100,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 500px;
 }
 
 .pics{
@@ -129,15 +133,13 @@
 .footer {
   padding-bottom: 50px;
   padding-top: 350px;
+  border: 5px solid red;
 }
 
 .mapDivP {
   text-align: left;
   padding: 19px;
 }
-
-
-
 
 
 

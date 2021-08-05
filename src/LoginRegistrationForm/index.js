@@ -48,28 +48,36 @@ export default class LoginRegisterForm extends Component {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }}>
-        <Grid.Column 
+        <Grid 
           style={{
             top: 250,
-            left: 300,
+            left: 800,
             alignItems: 'center',
             justifyContent: 'center',
             height: 1250,
             width: 390,
             borderRadius: 90,
-
+            padding: 15,
+            // marginBottom: 250
           }}>
-          <Segment >
-            <Form onSubmit={this.handleSubmit}>
+          <Segment 
+            style={{
+              top:-60,
+              left: 350,
+              padding: 7
+            }}
+          >
+            <Form 
+              onSubmit={this.handleSubmit}>
               {this.state.action==="Register"
               &&
-                <Form.Input 
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.handleChange}
-                />
+              <Form.Input 
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.handleChange}
+              />
               }
               <Form.Input 
                 type="email"
@@ -90,24 +98,45 @@ export default class LoginRegisterForm extends Component {
               </Button>
             
             </Form>
-            </Segment>
-            <Message>
-            {
-              this.state.action==="Login"
-              ?
-              <Message >
-              Need an account? <span className="link" onClick={this.changeForm}>Register</span>
-              </Message> 
-              :
-              <Message >
-              Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
-              </Message>
+          </Segment>
+          <Message
+            style={{
+              top:-540,
+              left: 350,
+              padding: 6,
+              margin: 15,
+
+            }}
+          >
+          {
+            this.state.action==="Login"
+            ?
+          <Message 
+            style={{
+              padding: 8,
+              margin: 1
+            }}
+          >
+          Need an account? <span className="link" onClick={this.changeForm}>Register</span>
+          </Message> 
+          :
+          <Message
+           style={{
+              padding: 8,
+              margin: 3
+            }}
+          >
+          Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
+          </Message>
            
             }
           </Message>
-        </Grid.Column>
+        </Grid>
 
       </Grid>      
     )
   }
 } 
+
+
+
