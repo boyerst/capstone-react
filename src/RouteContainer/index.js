@@ -169,7 +169,30 @@ export default class RouteContainer extends Component {
     }
   }
 
+  getRoute = async (idOfRouteToGet) => {
+    console.log("you are trying to get route with id: ", idOfRouteToGet)
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + idOfRouteToGet
+      console.log("Trying to fetch data from:");
+      console.log(url);
+      const routeResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      console.log("Here is the Response from the fetch call:");
+      console.log(routeResponse);
+      const routeJson = await routeResponse.json()
+      console.log("Here is the data we got in getRoute() in RouteContainer:");
+      console.log(routeJson);
+      this.setState({
+        idOfRouteToGet: idOfRouteToGet,
+        routeToGet: routeJson
+      })
+    } catch(err) {
+      console.error("Error getting route data.", err)
+    }
+  }
 
+  
   getRoutes = async () => {
     try {
       const url = process.env.REACT_APP_API_URL + "/api/v1/routes/"
@@ -191,30 +214,7 @@ export default class RouteContainer extends Component {
     }
   }
 
-  getRoute = async (idOfRouteToGet) => {
-    console.log("you are trying to get route with id: ", idOfRouteToGet)
-    try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/routes/" + idOfRouteToGet
-      console.log("Trying to fetch data from:");
-      console.log(url);
-      const routeResponse = await fetch(url, {
-        credentials: 'include'
-      })
-      console.log("Here is the Response from the fetch call:");
-      console.log(routeResponse);
-      const routeJson = await routeResponse.json()
-      console.log("Here is the data we got in getRoute() in RouteContainer:");
-      console.log(routeJson);
-      this.setState({
-        idOfRouteToGet: idOfRouteToGet,
-        routeToGet: routeJson
-      })
-    } catch(err) {
-      // console.error("Error getting route data.", err)
 
-
-    }
-  }
 
 
 
