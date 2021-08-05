@@ -37,9 +37,6 @@ export default class RouteContainer extends Component {
   }
 
 
-
-
-
   createRoute = async (routeToAdd) => {
     console.log("Here is the route you are trying to create:")
     console.log(routeToAdd)

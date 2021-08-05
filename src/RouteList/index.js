@@ -19,7 +19,6 @@ export default function RouteList(props) {
       key={route.id}
       columnWidth={1050}
       paddingbottom={300}
-
       >
         <Item.Group className="items" relaxed>
           <Item >

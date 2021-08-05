@@ -20,7 +20,6 @@ export default class App extends Component {
 
   }
   
-  
 
   register = async (registrationInfo) => {
     console.log("Here is the lifted registration data:", registrationInfo);
@@ -51,7 +50,6 @@ export default class App extends Component {
   }
 
 
-
   login = async (loginInfo) => {
     console.log("Here is the login info:", loginInfo);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
@@ -79,7 +77,6 @@ export default class App extends Component {
       console.error(error)
     }
   }
-
 
 
   logout = async () => {
@@ -114,12 +111,13 @@ export default class App extends Component {
     return (
            
       <div className="App">
-        <ParticleComponent/>
+      
         {
           this.state.loggedIn
           ?
           
           <React.Fragment>
+            <ParticleComponent/>    
             <GalleryContainer />
             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
             <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>

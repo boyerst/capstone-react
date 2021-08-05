@@ -128,7 +128,6 @@ export default class LoginRegisterForm extends Component {
           >
           Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
           </Message>
-           
             }
           </Message>
         </Grid>
