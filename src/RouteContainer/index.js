@@ -188,7 +188,7 @@ export default class RouteContainer extends Component {
       })
     } catch(err) {
       console.error("Error getting route data.", err)
-      console.warn(jqxhr.responseText)
+      console.error(jqxhr.responseText)
     }
   }
 
