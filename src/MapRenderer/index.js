@@ -46,14 +46,14 @@ function MapRenderer(props) {
         </Map>
             
         <div className="mapDiv" style={{borderRadius: 13/ 2}}>
-          <p className="mapDivP" style={{fontWeight: 'bold'}}>
-          <h2>ABOUT</h2> 
-          <h4>{props.routeToGet.location}</h4>
-          Skill Level: <Rating maxRating="5" rating={props.routeToGet.skill_level} disabled/>
-          
-          <h5>{props.routeToGet.comments}</h5>
-          <h5>{props.routeToGet.length} miles</h5>
-          </p>
+          <div className="mapDivP" style={{fontWeight: 'bold'}}>
+            <p>ABOUT</p> 
+            <h4>{props.routeToGet.location}</h4>
+            Skill Level: <Rating maxRating="5" rating={props.routeToGet.skill_level} disabled/>
+            
+            <h5>{props.routeToGet.comments}</h5>
+            <h5>{props.routeToGet.length} miles</h5>
+          </div>
           <Modal basic size='large'
             trigger={
             <Button className="photoModal"
