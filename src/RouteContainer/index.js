@@ -176,7 +176,10 @@ export default class RouteContainer extends Component {
       console.log("Trying to fetch data from:");
       console.log(url);
       const routesResponse = await fetch(url, {
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
       console.log("Here is the Response from the fetch call:");
       console.log(routesResponse);
@@ -211,6 +214,7 @@ export default class RouteContainer extends Component {
       })
     } catch(err) {
       console.error("Error getting route data.", err)
+
 
     }
   }
