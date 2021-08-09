@@ -8,7 +8,7 @@
   background: linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
 }
 
-.tsparticles {
+/*.tsparticles {
   height: 100%;
   bottom: 0;
 }
@@ -19,10 +19,10 @@
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 50%;*/
 
 /*  border: 5px solid pink;  */
-}
+/*}*/
 
 .particles {
   position: absolute;
@@ -59,9 +59,12 @@
   font-family: "Overbyte";
   font-size: 155px;
   padding-bottom: 30px;
-  margin-top: -10px;
+/*  margin-top: -150px;*/
 }
 
+.ui.secondary.menu {
+  margin: -4px;
+}
 
 .button.ui.button.new-route {
   display: flex;
@@ -104,14 +107,15 @@
   margin-top: 194px;
   margin-left: 1596px;
 }
+
 .button.ui.button.logout {
   display: flex;
   position: absolute;
   top: 0;
   margin-top: 26px;
   margin-left: 1600px;
-  
 }
+
 .button.ui.button.photoModal {
   /*display: inline-flex;*/
   display: inline-block;
@@ -161,7 +165,6 @@
 .footer {
   padding-bottom: 50px;
   padding-top: 350px;
-
 /*  border: 3px solid red;*/
 }
 
