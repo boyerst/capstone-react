@@ -15,3 +15,7 @@
   src: local('OstrichSansInline-Regular'), url(./style/fonts/OstrichSansInline-Regular.otf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Overbyte';
+  src: local('Oveerbyte'), url(./style/fonts/Overbyte.ttf) format('truetype');
+}

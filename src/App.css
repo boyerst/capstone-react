@@ -2,14 +2,10 @@
 
 .App {
   text-align: center;
-/*  background-color: #c4dce6;*/
   background: #FFE82E;
   background: -moz-linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
   background: -webkit-linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
   background: linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
-
-/*  font-family: "OstrichSansInline-Regular";*/
-/*  border: 5px solid orange;*/
 }
 
 .tsparticles {
@@ -52,12 +48,20 @@
   text-align: center;
 }
 
-.title {
+/*.title {
   font-family: "OstrichSansInline-Regular";
   font-size: 240px;
   padding-bottom: 30px;
   margin-top: -130px;
 }
+*/
+.title {
+  font-family: "Overbyte";
+  font-size: 155px;
+  padding-bottom: 30px;
+  margin-top: -10px;
+}
+
 
 .button.ui.button.new-route {
   display: flex;
