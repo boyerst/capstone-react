@@ -117,12 +117,11 @@ export default class App extends Component {
           ?
           
           <React.Fragment>
-            <ParticleComponent/>    
+           {/* <ParticleComponent/>   */} 
             <GalleryContainer />
             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
             <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>
             <Footer />
-          
           </React.Fragment>
           :
           <LoginRegistrationForm 
@@ -134,34 +133,7 @@ export default class App extends Component {
     );    
   }
 }
-//   render() 
-//     console.log("Here is process.env:")
-//     console.log(process.env)
-//     console.log(this.state)
-//     return (
-//       <div className="App">
-//         {
-//           this.state.loggedIn
-//           ?
-//           <React.Fragment>
 
-//             <GalleryContainer />
-//             <MenuContainer email={this.state.loggedInUserEmail} logout={this.logout}/>
-//             <RouteContainer className="routeCont" email={this.state.loggedInUserEmail}/>
-//             <Footer />
-
-          
-//           </React.Fragment>
-//           :
-//           <LoginRegistrationForm 
-//             login={this.login}
-//             register={this.register}
-//           />
-//         }
-//       </div>
-//     );    
-//   }
-// }
 
 
 

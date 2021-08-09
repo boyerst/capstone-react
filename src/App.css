@@ -2,7 +2,12 @@
 
 .App {
   text-align: center;
-  background-color: #c4dce6;
+/*  background-color: #c4dce6;*/
+  background: #FFE82E;
+  background: -moz-linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
+  background: -webkit-linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
+  background: linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
+
 /*  font-family: "OstrichSansInline-Regular";*/
 /*  border: 5px solid orange;*/
 }
