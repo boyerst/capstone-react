@@ -38,7 +38,6 @@
   display: flex;
   flex-direction: column;
   margin-top: -20; 
-
 /*  border: 3px solid red;*/
 }
 
@@ -57,7 +56,7 @@
 */
 .title {
   font-family: "Overbyte";
-  font-size: 155px;
+  font-size: 130px;
   padding-bottom: 30px;
 /*  margin-top: -150px;*/
 }
@@ -71,7 +70,7 @@
   position: absolute;
   top: 0;
   margin-top: 110px;
-  margin-left: 1595px;
+  margin-left: 1560px;
 }
 
 .button.ui.button.newMarker {
@@ -79,7 +78,7 @@
   position: absolute;
   top: 0;
   margin-top: 152px;
-  margin-left: 1595px;
+  margin-left: 1560px;
   width: 160px;
 }
 
@@ -89,7 +88,7 @@
   top: 0;
   color: red;
   margin-top: 28px;
-  margin-left: 1596px;
+  margin-left: 1560px;
 }
 
 .ui.button.gallery{
@@ -97,7 +96,7 @@
   position: absolute;
   top: 0;
   margin-top: 68px;
-  margin-left: 1596px;
+  margin-left: 1560px;
 }
 
 .button.ui.button.returnToList {
@@ -105,7 +104,7 @@
   position: absolute;
   top: 0;
   margin-top: 194px;
-  margin-left: 1596px;
+  margin-left: 1560px;
 }
 
 .button.ui.button.logout {
@@ -113,7 +112,7 @@
   position: absolute;
   top: 0;
   margin-top: 26px;
-  margin-left: 1600px;
+  margin-left: 1564px;
 }
 
 .button.ui.button.photoModal {
