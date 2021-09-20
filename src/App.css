@@ -96,13 +96,24 @@
   margin-left: 1560px;
 }
 
-@media screen and (max-width: 1700px) {
+/*When the screen width is less than 1400*/
+@media screen and (max-width: 1400px) {
   .button.ui.button.new-route {
     margin-top: 230px;
     margin-left: 500px;
   }
 }
 
+/*When the screen width is less than 1700 and more than 1400*/
+@media screen and (max-width: 1700px) and (min-width: 1400px) {
+  .button.ui.button.new-route {
+    display: flex;
+    position: absolute;
+    top: 0;
+    margin-top: 110px;
+    margin-left: 1360px;
+  }
+}
 
 .ui.button.gallery{
   display: flex;
@@ -112,10 +123,20 @@
   margin-left: 1560px;
 }
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1400px) {
   .ui.button.gallery {
     margin-top: 230px;
     margin-left: 660px;
+  }
+}
+
+@media screen and (max-width: 1700px) and (min-width: 1400px) {
+  .ui.button.gallery {
+    display: flex;
+    position: absolute;
+    top: 0;
+    margin-top: 68px;
+    margin-left: 1360px;
   }
 }
 
@@ -127,10 +148,20 @@
   margin-left: 1564px;
 }
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1400px) {
   .button.ui.button.logout {
     margin-top: 230px;
     margin-left: 770px;
+  }
+}
+
+@media screen and (max-width: 1700px) and (min-width: 1400px) {
+  .button.ui.button.logout {
+    display: flex;
+    position: absolute;
+    top: 0;
+    margin-top: 26px;
+    margin-left: 1360px;
   }
 }
 
