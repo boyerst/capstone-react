@@ -8,6 +8,7 @@
   background: linear-gradient(45deg, #FFE82E 0%, #C9FF57 100%);
 }
 
+
 /*.tsparticles {
   height: 100%;
   bottom: 0;
@@ -41,6 +42,7 @@
 /*  border: 3px solid red;*/
 }
 
+
 .link {
   position: relative;
   align-self: auto;
@@ -58,20 +60,15 @@
   font-family: "Overbyte";
   font-size: 130px;
   padding-bottom: 30px;
-/*  margin-top: -150px;*/
+  margin-top: 40px;
 }
+
 
 .ui.secondary.menu {
   margin: -4px;
 }
 
-.button.ui.button.new-route {
-  display: flex;
-  position: absolute;
-  top: 0;
-  margin-top: 110px;
-  margin-left: 1560px;
-}
+
 
 .button.ui.button.newMarker {
   display: flex;
@@ -91,12 +88,50 @@
   margin-left: 1560px;
 }
 
+.button.ui.button.new-route {
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin-top: 110px;
+  margin-left: 1560px;
+}
+
+@media screen and (max-width: 1700px) {
+  .button.ui.button.new-route {
+    margin-top: 230px;
+    margin-left: 500px;
+  }
+}
+
+
 .ui.button.gallery{
   display: flex;
   position: absolute;
   top: 0;
   margin-top: 68px;
   margin-left: 1560px;
+}
+
+@media screen and (max-width: 1700px) {
+  .ui.button.gallery {
+    margin-top: 230px;
+    margin-left: 660px;
+  }
+}
+
+.button.ui.button.logout {
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin-top: 26px;
+  margin-left: 1564px;
+}
+
+@media screen and (max-width: 1700px) {
+  .button.ui.button.logout {
+    margin-top: 230px;
+    margin-left: 770px;
+  }
 }
 
 .button.ui.button.returnToList {
@@ -107,13 +142,6 @@
   margin-left: 1560px;
 }
 
-.button.ui.button.logout {
-  display: flex;
-  position: absolute;
-  top: 0;
-  margin-top: 26px;
-  margin-left: 1564px;
-}
 
 .button.ui.button.photoModal {
   /*display: inline-flex;*/
